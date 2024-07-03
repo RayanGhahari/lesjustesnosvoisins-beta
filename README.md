@@ -1,1 +1,1 @@
-Version Beta lesjustesnosvoisins.fr - live preview : https://lesjustes.42web.io/
+Version Beta lesjustesnosvoisins.fr - live preview : https://rayanghahari.github.io/lesjustesnosvoisins-beta/
