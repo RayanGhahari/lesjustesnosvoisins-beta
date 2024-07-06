@@ -1,0 +1,68 @@
+.logo {
+    height: 100%; /* Assurez-vous que la hauteur du logo est héritée du parent */
+    width: auto;
+    padding-left: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+
+    width: 160px;
+    object-fit: contain;
+}
+
+
+
+header {
+    height: 100px;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #142A57;
+    gap: 20px;
+}
+
+li {
+    display: inline;
+    padding: 0px 25px 0px 0px;
+    text-align: center;
+    margin: auto;
+    text-wrap: nowrap;
+
+
+}
+
+ul {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 0px;
+    height: inherit;
+    padding: 0px 70px 0px 0px;
+}
+nav {
+    height: inherit;
+}
+nav a:visited, nav a {
+    color: white;
+    text-decoration: none;
+    transition: border-bottom 0.3s ease-in-out;
+    border-bottom: 2.5px solid transparent; 
+}
+
+nav a:hover {
+    border-bottom: 2.5px solid currentColor; 
+}
+
+nav a.active {
+    border-bottom: 2.5px solid currentColor; 
+}
+
+html{
+    max-width: none;
+    width: auto;
+}
