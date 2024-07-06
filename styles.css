@@ -62,7 +62,7 @@ nav a.active {
     border-bottom: 2.5px solid currentColor; 
 }
 
-html{
-    max-width: none;
-    width: auto;
+@media(max-width: 600px){
+    html {max-width: none; width:fit-content;};
+    
 }
