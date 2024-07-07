@@ -16,8 +16,10 @@
 
 
 header {
+    position: fixed;
+    top: 0;
+    width: 100%;
     height: 100px;
-    width: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -25,6 +27,15 @@ header {
     align-items: flex-start;
     background-color: #142A57;
     gap: 20px;
+    transition: background-color 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+header.transparent {
+    background-color: transparent;
+}
+header.transparent li {
+    color: #142A57;
 }
 
 li {
@@ -60,6 +71,10 @@ nav a:hover {
 
 nav a.active {
     border-bottom: 2.5px solid currentColor; 
+}
+
+nav a.top {
+    color: #142A57;
 }
 
 @media(max-width: 600px){
