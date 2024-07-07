@@ -1,5 +1,5 @@
 .logo {
-    height: 100%; /* Assurez-vous que la hauteur du logo est héritée du parent */
+    height: 100%; 
     width: auto;
     padding-left: 35px;
     display: flex;
@@ -80,4 +80,93 @@ nav a.top {
 @media(max-width: 600px){
     html {max-width: none; width:fit-content;};
     
+}
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    padding-right: 35px;
+}
+
+.hamburger-icon span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #142A57; 
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+header.scrolled .hamburger-icon span {
+    background-color: white; 
+}
+
+header.transparent .hamburger-icon span {
+    background-color: #142A57;
+}
+
+header.transparent.scrolled .hamburger-icon span {
+    background-color: white;
+}
+
+/* responsive pour les petits écrans */
+@media (max-width: 1024px) {
+    header {
+        justify-content: space-between;
+    }
+
+    .logo {
+        flex: 0 0 auto;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 400px;
+        height: 100%;
+        background-color: #142A57;
+        transition: right 0.3s ease-in-out;
+        overflow-y: auto;
+    }
+
+    nav.open {
+        right: 0;
+    }
+
+    ul {
+        flex-direction: column;
+        padding: 80px 20px 20px;
+        height: auto;
+    }
+
+    li {
+        display: block;
+        padding: 10px 0;
+        text-align: left;
+    }
+
+    .hamburger-menu {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    /* https://developer.mozilla.org/fr/docs/Web/CSS/:nth-child 
+    Création de la croix pour sortir du menu hamburger*/
+
+    header.open .hamburger-icon span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    header.open .hamburger-icon span:nth-child(2) {
+        opacity: 0;
+    }
+
+    header.open .hamburger-icon span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+    nav a.top {
+        color: white;
+    }
 }
