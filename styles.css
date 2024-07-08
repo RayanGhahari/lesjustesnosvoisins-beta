@@ -1,3 +1,5 @@
+/*HEADER*/
+
 .logo {
     height: 100%; 
     width: auto;
@@ -8,12 +10,9 @@
 }
 
 .logo img {
-
     width: 160px;
     object-fit: contain;
 }
-
-
 
 header {
     position: fixed;
@@ -25,39 +24,40 @@ header {
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: flex-start;
-    background-color: #142A57;
+    background-color: transparent; /* Changé en transparent */
     gap: 20px;
     transition: background-color 0.3s ease-in-out;
     z-index: 1000;
 }
 
-header.transparent {
-    background-color: transparent;
+header.scrolled {
+    background-color: #142A57;
 }
+
 header.transparent li {
     color: #142A57;
 }
 
-li {
+header li {
     display: inline;
     padding: 0px 25px 0px 0px;
     text-align: center;
     margin: auto;
     text-wrap: nowrap;
-
-
 }
 
-ul {
+header ul {
     display: flex;
     flex-wrap: nowrap;
     margin: 0px;
     height: inherit;
     padding: 0px 70px 0px 0px;
 }
+
 nav {
     height: inherit;
 }
+
 nav a:visited, nav a {
     color: white;
     text-decoration: none;
@@ -77,10 +77,6 @@ nav a.top {
     color: #142A57;
 }
 
-@media(max-width: 600px){
-    html {max-width: none; width:fit-content;};
-    
-}
 .hamburger-menu {
     display: none;
     cursor: pointer;
@@ -108,7 +104,11 @@ header.transparent.scrolled .hamburger-icon span {
     background-color: white;
 }
 
-/* responsive pour les petits écrans */
+header.transparent.open span{
+    background-color: white;
+}
+
+/* responsive */
 @media (max-width: 1024px) {
     header {
         justify-content: space-between;
@@ -134,27 +134,26 @@ header.transparent.scrolled .hamburger-icon span {
         right: 0;
     }
 
-    ul {
+    header ul {
         flex-direction: column;
         padding: 80px 20px 20px;
         height: auto;
     }
 
-    li {
+    header li {
         display: block;
         padding: 10px 0;
         text-align: left;
     }
 
     .hamburger-menu {
-        display: flex;
+        display: flex !important;
         align-items: center;
         height: 100%;
     }
 
     /* https://developer.mozilla.org/fr/docs/Web/CSS/:nth-child 
-    Création de la croix pour sortir du menu hamburger*/
-
+    Création de la croix pour sortir du menu hamburger (test de la fonctionnalité => ça fonctionne parfaitement) */
     header.open .hamburger-icon span:nth-child(1) {
         transform: rotate(-45deg) translate(-5px, 6px);
     }

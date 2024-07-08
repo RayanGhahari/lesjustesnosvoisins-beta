@@ -1,16 +1,16 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Gestion des différentes classes utilisées
-    var header = document.querySelector("header");
-    var navLinks = document.querySelectorAll("nav a");
-    var hamburger = document.querySelector('.hamburger-menu');
-    var nav = document.querySelector('nav');
+    const header = document.querySelector("header");
+    const navLinks = document.querySelectorAll("nav a");
+    const hamburger = document.querySelector('.hamburger-menu');
+    const nav = document.querySelector('nav');
 
     // Gestion de la classe 'active' pour les liens de navigation
-    var path = window.location.pathname;
-    var page = path.split("/").pop(); 
+    const path = window.location.pathname;
+    const page = path.split("/").pop(); 
     
     navLinks.forEach(function(link) {
-        var href = link.getAttribute("href");
+        const href = link.getAttribute("href");
         if (page === href || (page === "" && href === "index.html")) {
             link.classList.add("active");
         }
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Fermer le menu si on clique en dehors
     document.addEventListener('click', function(event) {
-        var isClickInside = nav.contains(event.target) || hamburger.contains(event.target);
+        const isClickInside = nav.contains(event.target) || hamburger.contains(event.target);
         if (!isClickInside && nav.classList.contains('open')) {
             nav.classList.remove('open');
             header.classList.remove('open');
