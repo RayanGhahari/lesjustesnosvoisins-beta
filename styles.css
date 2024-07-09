@@ -74,7 +74,7 @@ nav a.active {
 }
 
 nav a.top {
-    color: #142A57;
+    color: white;
 }
 
 .hamburger-menu {
@@ -168,4 +168,49 @@ header.transparent.open span{
     nav a.top {
         color: white;
     }
+}
+.img-fond{
+    position: relative;
+}
+.img-fond img{
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+}
+.titre{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 2;
+}
+
+.titre.visible{
+    opacity: 1;
+}
+.titre h1 {
+    font-size: 3rem; /* Ajustez la taille selon vos besoins */
+    margin-bottom: 0.5rem;
+}
+
+.titre p {
+    font-size: 1.2rem; /* Ajustez la taille selon vos besoins */
+}
+
+.img-fond::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.55); /* Fond gris semi-transparent */
+    z-index: 1; /* Assurez-vous que cette couche est au-dessus de l'image mais en-dessous du titre */
 }

@@ -68,4 +68,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     window.addEventListener('resize', checkScreenSize);
     checkScreenSize(); // Vérification initiale
+
+    setTimeout(function() {
+        document.querySelector('.titre').classList.add('visible');
+    }, 300);
 });
