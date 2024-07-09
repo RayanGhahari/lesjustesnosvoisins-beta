@@ -196,12 +196,12 @@ header.transparent.open span{
     opacity: 1;
 }
 .titre h1 {
-    font-size: 3rem; /* Ajustez la taille selon vos besoins */
+    font-size: 3rem;
     margin-bottom: 0.5rem;
 }
 
 .titre p {
-    font-size: 1.2rem; /* Ajustez la taille selon vos besoins */
+    font-size: 1.2rem; 
 }
 
 .img-fond::before {
@@ -211,6 +211,6 @@ header.transparent.open span{
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.55); /* Fond gris semi-transparent */
-    z-index: 1; /* Assurez-vous que cette couche est au-dessus de l'image mais en-dessous du titre */
+    background-color: rgba(0, 0, 0, 0.55); 
+    z-index: 1; 
 }
