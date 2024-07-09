@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 /*HEADER*/
 
 .logo {
@@ -24,7 +29,7 @@ header {
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: flex-start;
-    background-color: transparent; /* Changé en transparent */
+    background-color: transparent; 
     gap: 20px;
     transition: background-color 0.3s ease-in-out;
     z-index: 1000;
@@ -262,7 +267,7 @@ h2{
 }
 
 .centrage{
-    padding: 5px 10px 20px 25px;
+    padding: 10px 10px 20px 25px;
     width: fit-content;
     color: white;
 }
@@ -304,7 +309,7 @@ h2{
     }
 
     .sur-grid-justes {
-        width: 100%;
+        width: 90%;
         max-width: 645px;
         padding: 60px 10px;
     }
@@ -318,4 +323,8 @@ h2{
     .sous-grid-justes img {
         height: 300px;
     }
+}
+img{
+    width: 100%;
+    height: 100%;
 }
