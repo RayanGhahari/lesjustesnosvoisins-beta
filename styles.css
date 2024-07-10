@@ -63,14 +63,14 @@ nav {
     height: inherit;
 }
 
-nav a:visited, nav a {
+a:visited, a{
     color: white;
     text-decoration: none;
     transition: border-bottom 0.3s ease-in-out;
     border-bottom: 2.5px solid transparent; 
 }
 
-nav a:hover {
+nav a:hover{
     border-bottom: 2.5px solid currentColor; 
 }
 
@@ -152,7 +152,7 @@ header.transparent.open span{
     }
 
     .hamburger-menu {
-        display: flex !important;
+        display: flex;
         align-items: center;
         height: 100%;
     }
@@ -201,12 +201,19 @@ header.transparent.open span{
     opacity: 1;
 }
 .titre h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 0.5rem;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight:bold;
+    font-style: normal;
 }
 
 .titre p {
-    font-size: 1.2rem; 
+    padding-top: 10px;
+    font-size: 1rem; 
+    font-family: "Playfair Display", serif;
+
 }
 
 .img-fond::before {
@@ -225,8 +232,19 @@ header.transparent.open span{
 }
 
 h2{
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     display: block;
+    padding-bottom: 20px;
+    font-family: "Playfair Display", serif;
+}
+h3{
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
+}
+
+h4{
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
 }
 
 .grid-justes{
@@ -246,9 +264,9 @@ h2{
 
 .sous-grid-justes {
     display: grid;
-    width: 645px;
+    width: 600px;
     height:100%;
-    grid-template-rows: 1fr 180px;
+    grid-template-rows: 1fr 150px;
 }
 
 
@@ -266,8 +284,8 @@ h2{
     justify-self: start;
 }
 
-.centrage{
-    padding: 10px 10px 20px 25px;
+.contenu-justes{
+    padding: 20px 0px 15px 25px;
     width: fit-content;
     color: white;
 }
@@ -282,18 +300,30 @@ h2{
     border-radius: 6px;
     border-width: 0;
     font-family: Arial;
-    color: #747573;
+    color: #3a3e3f;
+    cursor: pointer;
     font-size: 16px;
-    background: #cfd1c9;
-    padding: 18px 34px 18px 34px;
+    background-color: #cfd1c9;
+    padding: 15px 30px 15px 30px;
     text-decoration: none;
 }  
 .btn:hover {
     background: #c1c4b6;
     text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-bleu{
+    color: white !important;
+    background: #142A57 !important;
+}
+
+.btn-bleu:hover{
+    background-color: #17397a !important;
+    transition: background-color 0.3s ease-in-out; 
 }
 /* responsive */
-@media (max-width: 1320px) {
+@media (max-width: 1340px) {
     .grid-justes {
         grid-template-columns: 1fr;
         gap: 30px;
@@ -321,10 +351,100 @@ h2{
     }
 
     .sous-grid-justes img {
-        height: 300px;
+        height: auto;
     }
 }
 img{
     width: 100%;
     height: 100%;
+}
+
+.sect{
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.sous-sect{
+    width: fit-content;
+    margin: 0 auto;
+
+}
+
+.centrage{
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 0px;
+}
+.centrage p{
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+
+.blanc h2,.blanc p{
+    color: white;
+}
+
+.centrage img{
+    max-width: 730px;
+    margin: 0 auto;
+}
+
+.taille-texte-1 p{
+    max-width: 730px;
+}
+
+.taille-texte-2 p{
+    max-width: 860px;
+}
+
+.grid-plusdinfo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.grid-plusdinfo > div {
+    background-color: #142A57;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 150px;
+    gap: 45px;
+}
+
+.grid-plusdinfo h4 {
+    color: white;
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 570px) {
+    .grid-plusdinfo {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+    footer a{
+        display: block;
+    }
+}
+
+footer section{
+    margin: 0 auto;
+    max-width: 840px;
+    padding: 60px 20px;
+}
+
+footer div{
+    width: fit-content;
+    padding: 30px 20px;
+}
+footer a{
+    padding: 5px 10px 5px 0px;
+    text-decoration: underline solid;
 }
