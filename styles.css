@@ -508,7 +508,7 @@ footer a{
     left: 0;
     width: 0%;
     height: 4px;
-    background: linear-gradient(90deg, rgba(2,0,36,1) 27%, rgba(13,13,166,1) 65%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(90deg, rgba(20,42,87,1) 41%, rgba(36,134,179,1) 64%, rgba(94,226,251,1) 100%);
     z-index: 9999;
     transition: width 0.1s ease;
 }
