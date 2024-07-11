@@ -12,6 +12,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1001;
+    transition: transform 0.3s ease;
 }
 
 .logo img {
@@ -35,8 +37,10 @@ header {
     z-index: 1000;
 }
 
-header.scrolled {
+
+header.scrolled, header.open {
     background-color: #142A57;
+    transition: background-color 0.3s ease-in-out;
 }
 
 header.transparent li {
@@ -49,6 +53,7 @@ header li {
     text-align: center;
     margin: auto;
     text-wrap: nowrap;
+    transition: transform 0.3s ease;
 }
 
 header ul {
@@ -66,7 +71,7 @@ nav {
 a:visited, a{
     color: white;
     text-decoration: none;
-    transition: border-bottom 0.3s ease-in-out;
+    transition: all 0.3s ease-in;
     border-bottom: 2.5px solid transparent; 
 }
 
@@ -129,7 +134,7 @@ header.transparent.open span{
         right: -100%;
         width: 80%;
         max-width: 400px;
-        height: 100%;
+        height: 100vh;
         background-color: #142A57;
         transition: right 0.3s ease-in-out;
         overflow-y: auto;
@@ -155,6 +160,7 @@ header.transparent.open span{
         display: flex;
         align-items: center;
         height: 100%;
+        transition: transform 0.3s ease;
     }
 
     /* https://developer.mozilla.org/fr/docs/Web/CSS/:nth-child 
@@ -232,7 +238,7 @@ header.transparent.open span{
 }
 
 h2{
-    font-size: min(5vw,2.5rem);
+    font-size: min(7vw,2.5rem);
     display: block;
     padding-bottom: 20px;
     font-family: "Playfair Display", serif;
@@ -268,8 +274,12 @@ h4{
     max-width: 700px;
     height:100%;
     grid-template-rows: 1fr 150px;
+    transition: transform 0.3s ease;
 }
 
+.sous-grid-justes:hover, .grid-plusdinfo > div:hover, .logo:hover, .hamburger-menu:hover,header li:hover, .btn:hover,a:hover {
+    transform: scale(1.05);
+}
 
 .sur-grid-justes{
     width: fit-content;
@@ -310,11 +320,13 @@ h4{
     background-color: #cfd1c9;
     padding: 15px 30px 15px 30px;
     text-decoration: none;
+    transition: all 0.3s ease-in;
 }  
 .btn:hover {
     background: #c1c4b6;
     text-decoration: none;
     transition: background-color 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .btn-bleu{
@@ -424,6 +436,7 @@ img{
     align-items: flex-start;
     min-height: 150px;
     gap: 45px;
+    transition: transform 0.3s ease;
 }
 
 .grid-plusdinfo h4 {
@@ -459,3 +472,37 @@ footer a{
 
 /*animation // effets*/
 
+.scroll {
+    opacity: 0;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll.visible {
+    opacity: 1;
+}
+
+@keyframes logoEntre {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.logo img {
+    animation: logoEntre 0.5s ease-out;
+}
+
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 27%, rgba(13,13,166,1) 65%, rgba(0,212,255,1) 100%);
+    z-index: 9999;
+    transition: width 0.1s ease;
+}

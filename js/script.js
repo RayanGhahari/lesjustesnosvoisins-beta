@@ -72,4 +72,42 @@ document.addEventListener("DOMContentLoaded", function() {
     setTimeout(function() {
         document.querySelector('.titre').classList.add('visible');
     }, 300);
+
+    function checkScroll() {
+        const elements = document.querySelectorAll('.scroll');
+        elements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            if (rect.top <= windowHeight * 0.8) {
+                el.classList.add('visible');
+            }
+        });
+    }
+    function updateScrollProgress() {
+        const scrollProgress = document.querySelector('.progress-bar');
+        const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = window.scrollY;
+        const progress = (scrolled / scrollableHeight) * 100;
+        scrollProgress.style.width = `${progress}%`;
+    }
+    
+    window.addEventListener('scroll', checkScroll);
+    window.addEventListener('scroll', updateScrollProgress);
+    window.addEventListener('load', checkScroll);
 });
+
+//optimisation
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js');
+}
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.src = entry.target.dataset.src;
+            observer.unobserve(entry.target);
+        }
+    });
+});
+
+document.querySelectorAll('img[data-src]').forEach(img => observer.observe(img));
