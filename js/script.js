@@ -97,9 +97,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 //optimisation
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js');
-}
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
