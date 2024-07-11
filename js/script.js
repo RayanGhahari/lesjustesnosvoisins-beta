@@ -42,9 +42,12 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             header.classList.add("transparent");
             header.classList.remove("scrolled");
-            navLinks.forEach(function(link) {
-                link.classList.add("top");
-            });
+            
+            if (window.location.pathname !== "/les_justes.html") {
+                navLinks.forEach(function(link) {
+                    link.classList.add("top");
+                });
+            }
         }
     }
 
