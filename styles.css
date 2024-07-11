@@ -93,6 +93,12 @@ nav a.top {
     padding-right: 35px;
 }
 
+button{
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
 .hamburger-icon span {
     display: block;
     width: 25px;
