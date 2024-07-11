@@ -259,6 +259,12 @@ h4{
     font-weight: bold;
 }
 
+p, a{
+    font-family: "Mukta", sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+}
+
 .grid-justes{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -451,7 +457,7 @@ img{
     font-size: 1.2rem;
 }
 
-@media (max-width: 570px) {
+@media (max-width: 610px) {
     .grid-plusdinfo {
         grid-template-columns: 1fr;
         max-width: 400px;
@@ -474,6 +480,9 @@ footer div{
 footer a{
     padding: 5px 10px 5px 0px;
     text-decoration: underline solid;
+    text-wrap: nowrap;
+    display: inline-block;
+
 }
 
 /*animation // effets*/
