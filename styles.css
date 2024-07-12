@@ -294,7 +294,7 @@ p, a{
     transition: transform 0.3s ease;
 }
 
-.sous-grid-justes:hover, .grid-plusdinfo > div:hover, .logo:hover, .hamburger-menu:hover,header li:hover, .btn:hover,a:hover, .familles-justes:hover,.fond-parcours-justes:hover {
+.sous-grid-justes:hover, .grid-plusdinfo > div:hover, .logo:hover, .hamburger-menu:hover,header li:hover, .btn:hover,a:hover, .familles-justes:hover,.fond-parcours-justes:hover, .maurice:hover {
     transform: scale(1.05);
 }
 
@@ -693,6 +693,7 @@ footer a{
     justify-content: space-between;
     align-items: center;
     padding: 50px;
+    transition: transform 0.3s ease;
 }
 
 .maurice > div {
