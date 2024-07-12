@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
             header.classList.add("transparent");
             header.classList.remove("scrolled");
             
-            if (window.location.pathname !== "/les_justes.html") {
+            if (window.location.pathname !== "/les_justes.html" && window.location.pathname !== "/les_vies_sauvees.html") {
                 navLinks.forEach(function(link) {
                     link.classList.add("top");
                 });

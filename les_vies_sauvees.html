@@ -1,12 +1,18 @@
 <!doctype html>
 <html lang="fr">
 
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="stylesheet" href="styles.css">
-        <title>Les vies sauvées︱Nos voisins les Justes</title>
-    </head>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="description" content="Découvrez Les Justes de Saint-Maur, un hommage aux héros locaux qui ont sauvé des vies pendant la Seconde Guerre mondiale. Au cours de notre travail, nous nous sommes rendus compte que les Justes sont assez peu connus du grand public, contrairement aux Résistants. Nous nous sommes interrogés sur cette situation et nous avons cherché à la comprendre.">
+    <title>Les vies sauvées︱Nos voisins les Justes</title>
+</head>
+<div class="progress-bar scroll"></div>
 
     <header>
         <div class="logo">
@@ -30,39 +36,42 @@
             </div>
         </div>
     </header>
-    <script src="js/script.js"></script>
+
 
     <body>
+        <section class="img-fond vies-sauvees scroll">
+            <div>
+                <img src="images/image_fond_maurice_dreksler.webp" alt="image de fond">
+            </div>
+            <div class="titre">
+                <h1>Les vies sauvées</h1>
+                <p>Les Justes ont permis à de nombreux Juifs d’échapper à la déportation malgré la traque destructrice de la Collaboration. Ainsi, dans cette rubrique, vous aurez l’occasion de découvrir les témoignages de ces survivants.</p>
+            </div>
+        </section>
         <main>
-            <section>
+            <section class="fond-bleu blanc maurice">
                 <div>
-                    <img src="images/image_fond_maurice_dreksler.webp" alt="image de fond">
-                </div>
-                <div>
-                    <h1>Les vies sauvées</h1>
-                    <p>Les Justes ont permis à de nombreux Juifs d’échapper à la déportation malgré la traque destructrice de la Collaboration. Ainsi, dans cette rubrique, vous aurez l’occasion de découvrir les témoignages de ces survivants.</p>
-                </div>
-            </section>
-            <section>
-                <div>
-                    <div>
-                        <h4>Maurice Dreksler</h4>
+                    <div class="scroll">
+                        <h3>Maurice Dreksler</h3>
                     </div>
-                    <div>
-                        <a href="les-vies-sauvees/temoignage-de-maurice-dreksler.html"><input type="button" value="Voir plus" role="link" class=""></a>
+                    <div class="scroll">
+                        <a href="les-vies-sauvees/temoignage-de-maurice-dreksler.html"><input type="button" value="Voir plus" role="link" class="btn"></a>
                     </div>
                 </div>
             </section>
         </main>
     </body>
-    <footer>
-        <div>
-            <p>Nous contacter : <a href="mailto:contact@lesjustesnosvoisins.fr">contact@lesjustesnosvoisins.fr</a></p>
-        </div>
-        <div>
-            <a href="donnees/mentions-legales.html">Mentions légales</a>
-            <a href="donnees/politique-de-confidentialite.html">Politique de confidentialité</a>
-            <a href="donnees/parametres-des-cookies.html">Paramètres des cookies</a>
-        </div>
+    <footer class="fond-bleu blanc">
+        <section>
+            <div>
+                <p>Nous contacter : <a href="mailto:contact@lesjustesnosvoisins.fr">contact@lesjustesnosvoisins.fr</a></p>
+            </div>
+            <div>
+                <a href="donnees/mentions-legales.html">Mentions légales</a>
+                <a href="donnees/politique-de-confidentialite.html">Politique de confidentialité</a>
+                <a href="donnees/parametres-des-cookies.html">Paramètres des cookies</a>
+            </div>
+        </section>
     </footer>
+    <script src="js/script.js"></script>
 </html>

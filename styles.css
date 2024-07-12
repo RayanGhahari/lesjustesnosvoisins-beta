@@ -418,7 +418,7 @@ img{
     text-align: center;
 }
 
-.blanc h2,.blanc p{
+.blanc h2,.blanc p, .blanc h3{
     color: white;
 }
 
@@ -462,12 +462,18 @@ img{
     font-size: 1.2rem;
 }
 
-@media (max-width: 610px) {
+@media (max-width: 640px) {
     .grid-plusdinfo {
         grid-template-columns: 1fr;
         max-width: 400px;
     }
+    footer div{
+        width: 250px !important;
+    }
     footer a{
+        display: block;
+    }
+    .maurice input{
         display: block;
     }
 }
@@ -479,7 +485,7 @@ footer section{
 }
 
 footer div{
-    width: fit-content;
+    width: 100%;
     padding: 30px 20px;
 }
 footer a{
@@ -663,3 +669,35 @@ footer a{
 }
 
 /*fin page les Justes*/
+/*début pas Les vies sauvées*/
+
+.vies-sauvees::before{
+    background-color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.vies-sauvees p{
+    color: #142A57;
+    font-family: "Mukta", sans-serif;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.vies-sauvees h1{
+    color: #142A57;
+}
+
+.maurice {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+}
+
+.maurice > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
