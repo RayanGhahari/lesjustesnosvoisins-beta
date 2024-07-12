@@ -294,7 +294,7 @@ p, a{
     transition: transform 0.3s ease;
 }
 
-.sous-grid-justes:hover, .grid-plusdinfo > div:hover, .logo:hover, .hamburger-menu:hover,header li:hover, .btn:hover,a:hover, .familles-justes:hover {
+.sous-grid-justes:hover, .grid-plusdinfo > div:hover, .logo:hover, .hamburger-menu:hover,header li:hover, .btn:hover,a:hover, .familles-justes:hover,.fond-parcours-justes:hover {
     transform: scale(1.05);
 }
 
@@ -749,16 +749,13 @@ footer a{
     align-items: center;
 }
 
-.parcours-item:not(.fond-bleu) {
-    background-color: white;
-}
-
 .parcours-item:not(.fond-bleu) h2 {
     color: #142A57;
     max-width: 320px;
 }
 .fond-parcours-justes{
     width: 100%;
+    transition: transform 0.3s ease;;
 }
 
 .parcours-item h3{
