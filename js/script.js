@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
             
             if (window.location.pathname !== "/les_justes.html" && window.location.pathname !== "/les_vies_sauvees.html") {
                 navLinks.forEach(function(link) {
-                    link.classList.add("top");
+                    link.classList.add("bleu");
                 });
             }
         }
