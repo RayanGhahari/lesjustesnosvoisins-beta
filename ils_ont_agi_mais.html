@@ -3,10 +3,17 @@
 
     <head>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
         <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+        <meta name="description" content="Découvrez Les Justes de Saint-Maur, un hommage aux héros locaux qui ont sauvé des vies pendant la Seconde Guerre mondiale.">
         <title>Ils ont agi mais...︱Nos voisins les Justes</title>
+
     </head>
+    <div class="progress-bar scroll"></div>
 
     <header>
         <div class="logo">
@@ -30,54 +37,59 @@
             </div>
         </div>
     </header>
-    <script src="js/script.js"></script>
-
     <body>
         <main>
-            <section>
+            <section class="sect ils-ont-agi-mais bleu">
                 <div>
                     <h1>Ils ont agi mais...</h1>
                     <p>Certaines personnes, bien qu'ayant contribué à sauver des vies juives, n’ont pas été nommées « Justes parmi les Nations ». Cette rubrique vous permettra de découvrir qui ils étaient et pourquoi ils n’ont pas eu accès à la même reconnaissance.</p>
                 </div>
             </section>
-            <section>
-                <div>
-                    <div>
-                        <h2>Des parcours à ne pas oublier</h2>
-                    </div>
-                    <div>
-                        <div>
-                            <h3>L'abbé Morel</h3>
+            <section class="parcours-justes">
+                <div class="fond-bleu fond-parcours-justes">
+                    <div class="parcours-item fond-bleu blanc">
+                        <div class="parcours-titre">
+                            <h2>Des parcours à ne pas oublier</h2>
                         </div>
-                        <div>
-                            <a href="ils-ont-agi-mais/l-abbe-morel.html"><input type="button" value="Voir plus" role="link" class=""></a>
+                        <div class="parcours-contenu">
+                            <div>
+                                <h3>L'abbé Morel</h3>
+                            </div>
+                            <div>
+                                <a href="ils-ont-agi-mais/l-abbe-morel.html"><input type="button" value="Voir plus" role="link" class="btn"></a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div>
-                    <div>
-                        <h2>Des Justes à découvrir</h2>
-                    </div>
-                    <div>
-                        <div>
-                            <h3>Madame Larousse</h3>
+                <div class="fond-parcours-justes">
+                    <div class="parcours-item">
+                        <div class="parcours-titre">
+                            <h2>Des Justes à découvrir</h2>
                         </div>
-                        <div>
-                            <a href="ils-ont-agi-mais/madame-larousse.html"><input type="button" value="Voir plus" role="link" class=""></a>
+                        <div class="parcours-contenu">
+                            <div>
+                                <h3>Madame Larousse</h3>
+                            </div>
+                            <div>
+                                <a href="ils-ont-agi-mais/madame-larousse.html"><input type="button" value="Voir plus" role="link" class="btn btn-bleu"></a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
         </main>
     </body>
-    <footer>
-        <div>
-            <p>Nous contacter : <a href="mailto:contact@lesjustesnosvoisins.fr">contact@lesjustesnosvoisins.fr</a></p>
-        </div>
-        <div>
-            <a href="donnees/mentions-legales.html">Mentions légales</a>
-            <a href="donnees/politique-de-confidentialite.html">Politique de confidentialité</a>
-            <a href="donnees/parametres-des-cookies.html">Paramètres des cookies</a>
-        </div>
+    <footer class="fond-bleu blanc">
+        <section>
+            <div>
+                <p>Nous contacter : <a href="mailto:contact@lesjustesnosvoisins.fr">contact@lesjustesnosvoisins.fr</a></p>
+            </div>
+            <div>
+                <a href="donnees/mentions-legales.html">Mentions légales</a>
+                <a href="donnees/politique-de-confidentialite.html">Politique de confidentialité</a>
+                <a href="donnees/parametres-des-cookies.html">Paramètres des cookies</a>
+            </div>
+        </section>
     </footer>
+    <script src="js/script.js"></script>
 </html>

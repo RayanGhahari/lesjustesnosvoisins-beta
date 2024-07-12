@@ -267,7 +267,7 @@ h4{
 p, a{
     font-family: "Mukta", sans-serif;
     font-weight: 400;
-    font-size: 18px !important;
+    font-size: 16px !important;
 }
 
 .grid-justes{
@@ -468,7 +468,9 @@ img{
         max-width: 400px;
     }
     footer div{
-        width: 250px !important;
+        width: 100%;
+        max-width: auto;
+        padding: 30px 0 !important;
     }
     footer a{
         display: block;
@@ -700,4 +702,93 @@ footer a{
     width: 100%;
     max-width: 700px;
     margin: 0 auto;
+}
+
+/*fin les vies sauvées*/
+/*Ils ont agi mais...*/
+
+.ils-ont-agi-mais{
+    padding: 115px 20px 60px 20px;
+}
+.ils-ont-agi-mais h1{
+    font-size: 2rem;
+    padding-bottom: 15px;
+}
+.ils-ont-agi-mais p{
+    max-width: 730px;
+    margin: 0 auto;
+}
+
+.parcours-justes {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.parcours-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 80%;
+    gap: 30px;
+}
+
+.parcours-titre {
+    flex: 1;
+    max-width: 520px;
+}
+
+.parcours-contenu {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.parcours-item:not(.fond-bleu) {
+    background-color: white;
+}
+
+.parcours-item:not(.fond-bleu) h2 {
+    color: #142A57;
+    max-width: 320px;
+}
+.fond-parcours-justes{
+    width: 100%;
+}
+
+.parcours-item h3{
+    font-size: 1.25rem;
+}
+@media (max-width: 500px) {
+    .parcours-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .parcours-titre,
+    .parcours-contenu {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .parcours-contenu {
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        align-items: start;
+    
+    }
+
+    .parcours-contenu > div:last-child {
+        margin-top: 15px;
+    }
 }
