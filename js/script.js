@@ -43,14 +43,18 @@ document.addEventListener("DOMContentLoaded", function() {
             header.classList.add("transparent");
             header.classList.remove("scrolled");
             
-            if (window.location.pathname !== "/les_justes.html" && window.location.pathname !== "/les_vies_sauvees.html") {
-                navLinks.forEach(function(link) {
-                    link.classList.add("top");
-                });
+            switch (window.location.pathname) {
+                case "/les_justes.html":
+                case "/les_vies_sauvees.html":
+                    break;
+                default:
+                    navLinks.forEach(function(link) {
+                        link.classList.add("top");
+                    });
             }
         }
     }
-
+    
     window.addEventListener("scroll", handleScroll);
 
     // Vérification initiale au chargement de la page
