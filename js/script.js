@@ -39,20 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
             navLinks.forEach(function(link) {
                 link.classList.remove("top");
             });
-        } else {
-            header.classList.add("transparent");
-            header.classList.remove("scrolled");
-            
-            switch (window.location.pathname) {
-                case "/les_justes.html":
-                case "/les_vies_sauvees.html":
-                    break;
-                default:
-                    navLinks.forEach(function(link) {
-                        link.classList.add("top");
-                    });
-            }
-        }
+        } 
     }
     
     window.addEventListener("scroll", handleScroll);
