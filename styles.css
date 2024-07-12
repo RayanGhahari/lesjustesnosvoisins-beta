@@ -89,7 +89,7 @@ nav a.active {
 }
 
 nav a.top, header.open a {
-    color: white;
+    color: white !important;
 }
 
 .hamburger-menu {
