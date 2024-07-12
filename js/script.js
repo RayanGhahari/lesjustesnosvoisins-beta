@@ -32,20 +32,62 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Gestion de la transparence du header et de la couleur du hamburger lors du scroll
-    function handleScroll() {
-        if (window.scrollY > 0) {
-            header.classList.remove("transparent");
-            header.classList.add("scrolled");
-            navLinks.forEach(function(link) {
-                link.classList.remove("top");
-            });
-        } 
-    }
-    
-    window.addEventListener("scroll", handleScroll);
+    let lastScrollPosition = window.scrollY;
 
-    // Vérification initiale au chargement de la page
+// Fonction principale de gestion du défilement
+function handleScroll() {
+    const currentScrollPosition = window.scrollY;
+    const isScrollingDown = currentScrollPosition > lastScrollPosition;
+    const isAtTop = currentScrollPosition === 0;
+    const currentPath = window.location.pathname;
+
+    // Gestion de l'en-tête
+    header.classList.toggle('scrolled', !isAtTop);
+    header.classList.toggle('transparent', isAtTop);
+
+    // Gestion des liens de navigation
+    const isExceptionPage = currentPath.includes('les_justes') || currentPath.includes('les_vies_sauvees');
+    
+    navLinks.forEach(link => {
+        if (isAtTop && !isExceptionPage) {
+            link.classList.add('top');
+        } else {
+            link.classList.remove('top');
+        }
+    });
+
+    lastScrollPosition = currentScrollPosition;
+}
+
+// Optimisation des performances avec requestAnimationFrame
+let ticking = false;
+
+function requestTick() {
+    if (!ticking) {
+        requestAnimationFrame(() => {
+            handleScroll();
+            ticking = false;
+        });
+    }
+    ticking = true;
+}
+
+// Écouteurs d'événements
+window.addEventListener('scroll', requestTick, { passive: true });
+window.addEventListener('resize', requestTick, { passive: true });
+document.addEventListener('DOMContentLoaded', handleScroll);
+
+// Gestion du chargement initial et des changements de page
+function init() {
     handleScroll();
+    // Réinitialiser l'état au changement de page (pour les applications SPA)
+    if ('onpopstate' in window) {
+        window.addEventListener('popstate', handleScroll);
+    }
+}
+
+// Appel de la fonction d'initialisation
+init();
 
     // Ajustement pour les appareils mobiles
     function checkScreenSize() {
