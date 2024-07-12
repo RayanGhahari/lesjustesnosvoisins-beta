@@ -294,7 +294,7 @@ p, a{
     transition: transform 0.3s ease;
 }
 
-.sous-grid-justes:hover, .grid-plusdinfo > div:hover, .logo:hover, .hamburger-menu:hover,header li:hover, .btn:hover,a:hover {
+.sous-grid-justes:hover, .grid-plusdinfo > div:hover, .logo:hover, .hamburger-menu:hover,header li:hover, .btn:hover,a:hover, .familles-justes:hover {
     transform: scale(1.05);
 }
 
@@ -528,7 +528,7 @@ footer a{
 }
 
 /*FIN PAGE D'ACCUEIL*/
-
+/*Page les Justes*/
 .section-justes {
     display: flex;
     height: 100vh;
@@ -576,6 +576,7 @@ footer a{
     font-weight: 700;
     font-size: 64px;
     margin: 0;
+    text-align: left;
 }
 
 .bloc-description {
@@ -590,9 +591,10 @@ footer a{
     color: #333;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .section-justes {
         flex-direction: column;
+        height: auto;
     }
 
     .partie-gauche, .partie-droite {
@@ -600,7 +602,7 @@ footer a{
     }
 
     .partie-gauche {
-        height: 50vh;
+        height: 70vh;
     }
 
     .partie-droite {
@@ -623,3 +625,41 @@ footer a{
         margin-top: 2rem;
     }
 }
+
+.grid-page-justes{
+    display: flex;
+    height: auto;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    align-content: center;
+    gap: 30px;
+    background: #142A57;
+    padding: 60px 30px;
+    margin: 0 auto;
+}
+.familles-justes{
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    background: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.familles-justes div{
+    padding: 10px 30px;
+    width: fit-content;
+}
+
+.familles-justes h3, .familles-justes a input{
+    margin: 20px 0;
+}
+
+@media (max-width:560px) {
+    .grid-page-justes{
+        flex-wrap: wrap;
+    }
+}
+
+/*fin page les Justes*/
