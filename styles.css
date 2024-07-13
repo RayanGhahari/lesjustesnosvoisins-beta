@@ -294,7 +294,7 @@ p, a{
     transition: transform 0.3s ease;
 }
 
-.sous-grid-justes:hover, .grid-plusdinfo > div:hover, .logo:hover, .hamburger-menu:hover,header li:hover, .btn:hover,a:hover, .familles-justes:hover,.fond-parcours-justes:hover, .maurice:hover {
+.sous-grid-justes:hover, .grid-plusdinfo > div:hover, .logo:hover, .hamburger-menu:hover,header li:hover, .btn:hover,a:hover, .familles-justes:hover,.fond-parcours-justes:hover, .maurice:hover,.ikek img:hover, .victor img:hover {
     transform: scale(1.05);
 }
 
@@ -757,7 +757,7 @@ footer a{
 .parcours-item h3{
     font-size: 1.25rem;
 }
-@media (max-width: 500px) {
+@media (max-width: 520px) {
     .parcours-item {
         flex-direction: column;
         align-items: flex-start;
@@ -769,6 +769,12 @@ footer a{
     .parcours-contenu {
         width: 100%;
         margin-bottom: 15px;
+    }
+
+    .modal-content{
+        left: -210px;
+        overflow: visible;
+        width: 100%;
     }
 }
 
@@ -930,4 +936,62 @@ footer a{
 
 .ikek img, .victor img{
     width: 100%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
+
+/* Styles for the modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    position: relative;
+    width: fit-content;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.modal-image {
+    display: block;
+    max-width: none;
+    width: auto;
+    height: auto;
+}
+
+.fermer {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.fermer:hover,
+.fermer:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.highlight {
+    position: absolute;
+    border: 3px solid #142A57;
+    border-radius: 10px;
+    pointer-events: none;
+    display: none;
+}
+

@@ -90,6 +90,48 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener('scroll', checkScroll);
     window.addEventListener('scroll', updateScrollProgress);
     window.addEventListener('load', checkScroll);
+
+    const modal = document.getElementById('image-modal');
+    const modalImg = document.getElementById('imageAgrandie');
+    const span = document.getElementsByClassName('fermer')[0];
+    const highlight = document.querySelector('.highlight');
+
+    document.querySelectorAll('.image-clickable').forEach(function (img) {
+        img.onclick = function () {
+            modal.style.display = 'flex';
+            modalImg.src = this.src;
+
+            highlight.style.display = 'block';
+            highlight.style.left = '367px';
+            highlight.style.top = '107px';
+            highlight.style.width = '135px';  
+            highlight.style.height = '25px';
+        };
+    });
+    
+    document.querySelectorAll('.image-clickable-bis').forEach(function (img) {
+        img.onclick = function () {
+            modal.style.display = 'flex';
+            modalImg.src = this.src;
+            highlight.style.display = 'block';
+            highlight.style.left = '260px';
+            highlight.style.top = '112px';
+            highlight.style.width = '128px';  
+            highlight.style.height = '25px';
+        };
+    });
+
+    span.onclick = function () {
+        modal.style.display = 'none';
+        highlight.style.display = 'none';
+    };
+
+    modal.addEventListener('click', function (event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+            highlight.style.display = 'none';
+        }
+    });
 });
 
 //optimisation
@@ -104,3 +146,4 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 document.querySelectorAll('img[data-src]').forEach(img => observer.observe(img));
+
