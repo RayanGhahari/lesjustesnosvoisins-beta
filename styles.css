@@ -473,6 +473,12 @@ p, a{
     .maurice input{
         display: block;
     }
+
+    .modal-content{
+        left: -210px;
+        overflow: visible;
+        width: 100%;
+    }
 }
 
 footer section{
@@ -769,12 +775,6 @@ footer a{
     .parcours-contenu {
         width: 100%;
         margin-bottom: 15px;
-    }
-
-    .modal-content{
-        left: -210px;
-        overflow: visible;
-        width: 100%;
     }
 }
 
