@@ -419,6 +419,7 @@ p, a{
 
 .centrage img{
     max-width: 730px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -660,12 +661,15 @@ footer a{
     padding: 10px 30px;
     width: fit-content;
 }
+.familles-justes img{
+    width: 100%;
+}
 
 .familles-justes h3, .familles-justes a input{
     margin: 20px 0;
 }
 
-@media (max-width:560px) {
+@media (max-width:578px) {
     .grid-page-justes{
         flex-wrap: wrap;
     }
