@@ -296,7 +296,7 @@ p, a{
     transition: transform 0.3s ease;
 }
 
-.sous-grid-justes:hover, .grid-plusdinfo > div:hover, .logo:hover, .hamburger-menu:hover,header li:hover, .btn:hover,a:hover, .familles-justes:hover,.fond-parcours-justes:hover, .maurice:hover,.ikek img:hover, .victor img:hover {
+.sous-grid-justes:hover, .grid-plusdinfo > div:hover, .logo:hover, .hamburger-menu:hover,header li:hover, .btn:hover,a:hover, .familles-justes:hover,.fond-parcours-justes:hover, .maurice:hover,.ikek img:hover, .victor img:hover, li:has(a):hover {
     transform: scale(1.05);
 }
 
@@ -1025,8 +1025,8 @@ footer a{
 .grid-2{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    height: 100vh;
-
+    min-height: 100vh;
+    height: auto;
 }
 
 .grid-2-img img{
@@ -1049,14 +1049,13 @@ footer a{
     font-size: 2rem;
 }
 
-@media (max-width:700px){
+@media (max-width:750px){
     .grid-2{
         grid-template-rows: auto auto;
         grid-template-columns: none;
         height: auto;
     }
     .grid-2-img img{
-        max-height: 700px;
         height: 100%;
     }
     .grid-2-img{
@@ -1064,8 +1063,27 @@ footer a{
     }
     .grid-2-desc{
         grid-row-start: 2;
+        padding-top: 20px;
+    }
+}    
+@media (max-width:1000px){
+    .qui-sommes-nous{
+        grid-template-rows: auto auto;
+        grid-template-columns: none;
+        height: auto;
+    }
+    .qui-sommes-nous-img img{
+        height: 100%;
+    }
+    .qui-sommes-nous-img{
+        height: 60vh;
+    }
+    .qui-sommes-nous-desc{
+        grid-row-start: 2;
+        padding-top: 20px;
     }
 }
+
 
 .frise img{
     height: 100%;
@@ -1121,4 +1139,51 @@ footer a{
 .yad-vashem-titre h2{
     width: fit-content;
     font-size: 2rem;
+}
+
+.remerciements-sect{
+    padding: 115px 20px ;
+}
+.remerciements-sect div{
+    width: fit-content;
+    margin: auto;
+    max-width: 730px;
+    padding: 15px;
+}
+
+.sources-sect{
+    padding: 115px 20px 60px 20px;
+}
+.sources-titre h3{
+    margin: 0 auto;
+    width: fit-content;
+    color: #142A57;
+    font-size: 2rem;
+}
+.sources-sous-titre h4{
+    color: #142A57;
+    padding: 15px 0;
+    font-size: 1.25rem;
+}
+
+.sources-sect a{
+    color:#142A57;
+    text-decoration: underline solid;
+}
+.sources-div{
+    max-width: 730px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+.sources-div ul{
+    list-style-position: inside;
+}
+
+.sources-div li{
+    transition: transform 0.3s ease;
+}
+
+.sources-div a:hover{
+    color: #17397a;
 }
