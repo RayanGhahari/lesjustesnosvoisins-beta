@@ -1,12 +1,19 @@
 <!doctype html>
 <html lang="fr">
 
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="stylesheet" href="../styles.css">
-        <title>Contexte︱Les Justes nos voisins</title>
-    </head>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="description" content="Découvrez Les Justes de Saint-Maur, un hommage aux héros locaux qui ont sauvé des vies pendant la Seconde Guerre mondiale.">
+    <title>Contexte︱Les Justes nos voisins</title>
+
+</head>
+<div class="progress-bar scroll"></div>
 
     <header>
         <div class="logo">
@@ -30,39 +37,51 @@
             </div>
         </div>
     </header>
-<script src="../js/script.js"></script>
+
 
     <body>
         <main>
-            <section>
-                <div>
+            <section class="contexte-fond">
+                <div class="image-container-contexte">
                     <img src="images/image_fond_contexte.jpg" alt="photo de fond">
                 </div>
-                <div>
-                    <h3>Contexte : la France en 1940</h3>
-                    <p>Le 10 mai 1940, le IIIe Reich lance un assaut sur son front ouest et sur la France, rapidement submergée. L’armée française doit reculer face à l’avancée inexorable de la Wehrmacht qui, le 14 juin 1940, entre dans Paris. Le 22 juin, l’armistice est signé : la France est vaincue. Les clauses de cet accord comprennent l’obligation de « se conformer aux réglementations des autorités militaires allemandes » (article 3). </p>
-                    <p>Dans la zone dite libre, dès le 3 octobre, un statut des Juifs est publié, les excluant de la société française. Interdit de certaines fonctions ou certains métiers, ils se voient forcés d’immatriculer leurs entreprises et sont surveillés. Certains perdent, d'un trait de plume, leur nationalité française. Bon nombre de juifs étrangers sont enfermés dans des camps d'internement. </p>
-                    <p>En zone occupée, un recensement est lancé à la fin de 1940. Au printemps 1941, les rafles commencent. La première est celle du "billet vert", du nom de la convocation reçue par les juifs étrangers qui doivent se rendre au commissariat pour examen de leur situation. En 1942, elles se multiplient, avec la collaboration de la police et la gendarmerie française. Les 16 et 17 juillet 1942, pour la première fois, des femmes et des enfants sont également arrêtés, rassemblés au Vel' d'Hiv et emmenés à Drancy. Dans leur immense majorité, ils seront ensuite déportés vers le centre de mise à mort d'Auschwitz-Birkenau. Depuis le territoire français, le premier convoi part le 27 mars 1942. Près de 80 suivront.</p>
-                    <p>En zone libre, en plus des discriminations et restrictions, des rafles ont lieu à l'été 1942, avant même que les Allemands n'envahissent la zone en novembre.</p>
-                    <p>Tout individu coupable de s'opposer aux règles édictées prenait des risques, pour lui et, souvent, pour les siens. C'était, incontestablement, un acte de résistance.</p>                
+                <div class="contexte-content scroll">
+                    <div class="scroll contexte-titre">
+                        <h2>Contexte : la France en 1940</h2>
+                        <p>Le 10 mai 1940, le IIIe Reich lance un assaut sur son front ouest et sur la France, rapidement submergée. L’armée française doit reculer face à l’avancée inexorable de la Wehrmacht qui, le 14 juin 1940, entre dans Paris. Le 22 juin, l’armistice est signé : la France est vaincue. Les clauses de cet accord comprennent l’obligation de « se conformer aux réglementations des autorités militaires allemandes » (article 3). </p>
+                        <p>Dans la zone dite libre, dès le 3 octobre, un statut des Juifs est publié, les excluant de la société française. Interdit de certaines fonctions ou certains métiers, ils se voient forcés d’immatriculer leurs entreprises et sont surveillés. Certains perdent, d'un trait de plume, leur nationalité française. Bon nombre de juifs étrangers sont enfermés dans des camps d'internement. </p>
+                        <p>En zone occupée, un recensement est lancé à la fin de 1940. Au printemps 1941, les rafles commencent. La première est celle du "billet vert", du nom de la convocation reçue par les juifs étrangers qui doivent se rendre au commissariat pour examen de leur situation. En 1942, elles se multiplient, avec la collaboration de la police et la gendarmerie française. Les 16 et 17 juillet 1942, pour la première fois, des femmes et des enfants sont également arrêtés, rassemblés au Vel' d'Hiv et emmenés à Drancy. Dans leur immense majorité, ils seront ensuite déportés vers le centre de mise à mort d'Auschwitz-Birkenau. Depuis le territoire français, le premier convoi part le 27 mars 1942. Près de 80 suivront.</p>
+                        <p>En zone libre, en plus des discriminations et restrictions, des rafles ont lieu à l'été 1942, avant même que les Allemands n'envahissent la zone en novembre.</p>
+                        <p>Tout individu coupable de s'opposer aux règles édictées prenait des risques, pour lui et, souvent, pour les siens. C'était, incontestablement, un acte de résistance.</p>                
+                    </div>
                 </div>
             </section>
 
-            <section>
-                <div>
-                    <img src="images/frise_chronologique.jpg" alt="frise chronologique du contexte historique">
+            <section class="fond-bleu">
+                <div class="frise scroll">
+                    <img src="images/frise_chronologique.jpg" alt="frise chronologique du contexte historique" class="image-clickable-ter">
                 </div>
             </section>
+            <div id="image-modal" class="modal">
+                <span class="fermer">&times;</span>
+                <div class="modal-content">
+                    <img class="modal-image" id="imageAgrandie">
+                </div>
+            </div>
+
         </main>
     </body>
-    <footer>
-        <div>
-            <p>Nous contacter : <a href="mailto:contact@lesjustesnosvoisins.fr">contact@lesjustesnosvoisins.fr</a></p>
-        </div>
-        <div>
-            <a href="../donnees/mentions-legales.html">Mentions légales</a>
-            <a href="../donnees/politique-de-confidentialite.html">Politique de confidentialité</a>
-            <a href="../donnees/parametres-des-cookies.html">Paramètres des cookies</a>
-        </div>
+    <footer class="fond-bleu blanc">
+        <section>
+            <div>
+                <p>Nous contacter : <a href="mailto:contact@lesjustesnosvoisins.fr">contact@lesjustesnosvoisins.fr</a></p>
+            </div>
+            <div>
+                <a href="../donnees/mentions-legales.html">Mentions légales</a>
+                <a href="../donnees/politique-de-confidentialite.html">Politique de confidentialité</a>
+                <a href="../donnees/parametres-des-cookies.html">Paramètres des cookies</a>
+            </div>
+        </section>
     </footer>
+    <script src="../js/script.js"></script>
 </html>

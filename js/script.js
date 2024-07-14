@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function handleScroll() {
         const Top = window.scrollY === 0;
         const Position = window.location.pathname;
-        const ExceptionPage = Position.includes('les_justes') || Position.includes('les_vies_sauvees') || Position.includes('ils_ont_agi_mais') || Position.includes('histoire_et_travail_de_memoire')|| Position.includes('les_vies_sauvees') || Position.includes("plus_d'info");
+        const ExceptionPage = Position.includes('les_justes') || Position.includes('les_vies_sauvees') || Position.includes('ils_ont_agi_mais') || Position.includes('histoire_et_travail_de_memoire') || Position.includes("plus_d'info")|| Position.includes("accueil");
     
         header.classList.toggle('scrolled', !Top);
         header.classList.toggle('transparent', Top);
@@ -119,6 +119,13 @@ document.addEventListener("DOMContentLoaded", function() {
             highlight.style.width = '128px';  
             highlight.style.height = '25px';
         };
+    });
+
+    document.querySelectorAll('.frise img').forEach(function (img) {
+        img.onclick = function () {
+            modal.style.display = 'flex';
+            modalImg.src = this.src;
+        }
     });
 
     span.onclick = function () {
