@@ -262,6 +262,7 @@ h3{
 h4{
     font-family: "Playfair Display", serif;
     font-weight: bold;
+    color: white;
 }
 
 p, a{
@@ -479,6 +480,9 @@ p, a{
         left: -210px;
         overflow: visible;
         width: 100%;
+    }
+    .plusdinfo-titre{
+        text-align: center !important;
     }
 }
 
@@ -944,7 +948,6 @@ footer a{
     transition: transform 0.3s ease;
 }
 
-/* Styles for the modal */
 .modal {
     display: none;
     position: fixed;
@@ -999,3 +1002,20 @@ footer a{
     display: none;
 }
 
+/*fin histoire et travail de mémoire*/
+/*plus d'info*/
+
+.plusdinfo-sect{
+    padding: 115px 20px 60px 20px;
+}
+.plusdinfo-titre{
+    text-align: left;
+    margin:0 auto;
+    max-width: 840px;
+}
+
+.plusdinfo-titre h2{
+    padding: 0 20px;
+    color: #142A57;
+}
+/*fin plus d'info*/

@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function handleScroll() {
         const Top = window.scrollY === 0;
         const Position = window.location.pathname;
-        const ExceptionPage = Position.includes('les_justes') || Position.includes('les_vies_sauvees') || Position.includes('ils_ont_agi_mais') || Position.includes('histoire_et_travail_de_memoire');
+        const ExceptionPage = Position.includes('les_justes') || Position.includes('les_vies_sauvees') || Position.includes('ils_ont_agi_mais') || Position.includes('histoire_et_travail_de_memoire')|| Position.includes('les_vies_sauvees') || Position.includes("plus_d'info");
     
         header.classList.toggle('scrolled', !Top);
         header.classList.toggle('transparent', Top);
