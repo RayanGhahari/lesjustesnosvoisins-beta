@@ -72,9 +72,10 @@ nav {
 
 nav a, nav a:visited{
     color: #142A57;
+    text-decoration: none;
 }
 
-header.scrolled a:visited, a, a:visited{
+header.scrolled a:visited, a:visited, footer a{
     color: white;
     text-decoration: none;
     transition: all 0.3s ease-in;
@@ -1166,9 +1167,9 @@ footer a{
     font-size: 1.25rem;
 }
 
-.sources-sect a{
-    color:#142A57;
-    text-decoration: underline solid;
+.sources-sect a, .sources-sect a:visited{
+    color:#142A57 !important;
+    text-decoration: #142A57 solid underline !important;
 }
 .sources-div{
     max-width: 730px;
