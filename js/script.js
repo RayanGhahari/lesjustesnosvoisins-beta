@@ -42,7 +42,8 @@ document.addEventListener("DOMContentLoaded", function() {
             'ils_ont_agi_mais',
             'histoire_et_travail_de_memoire',
             "plus_d'info",
-            'accueil'
+            'accueil',
+            "donnees"
         ]; //passage a un tableau car trop d'exceptions
         
         const ExceptionPage = exceptionPages.some(page => Position.includes(page));

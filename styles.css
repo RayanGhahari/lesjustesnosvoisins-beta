@@ -1152,6 +1152,9 @@ footer a{
     padding: 15px;
 }
 
+/*fin accueil*/
+/*plus d'infos*/
+
 .sources-sect{
     padding: 115px 20px 60px 20px;
 }
@@ -1259,7 +1262,6 @@ footer a{
     padding: 10px 0 80px 20px;
 }
 
-/* Styles pour la modale d'image */
 .modale-image {
     display: none; 
     position: fixed; 
@@ -1301,3 +1303,30 @@ footer a{
 }
 
 
+/*fin plus d'infos*/
+/*données*/
+
+.data-sect{
+    padding: 115px 20px 60px 20px;
+}
+
+.data-sect h1, .data-sect h2{
+    padding: 20px 0;
+    color: #142A57;
+}
+.data-sect h2{
+    font-size: 1.5rem;
+}
+.data-sect h1{
+    font-size: 2.5rem;
+}
+
+.data-sect div{
+    max-width: 730px;
+    margin: 0 auto;
+}
+
+.data-sect ul{
+    list-style-position: inside;
+    padding: 10px;
+}
