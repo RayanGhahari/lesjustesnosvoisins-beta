@@ -1054,6 +1054,10 @@ footer a{
     font-size: 2rem;
 }
 
+.grid-2-desc ul{
+    list-style-position: inside;
+}
+
 @media (max-width:750px){
     .grid-2{
         grid-template-rows: auto auto;
