@@ -269,7 +269,7 @@ h4{
 p, a{
     font-family: "Mukta", sans-serif;
     font-weight: 400;
-    font-size: 17px !important;
+    font-size: 17px;
 }
 
 .grid-justes{
@@ -296,7 +296,7 @@ p, a{
     transition: transform 0.3s ease;
 }
 
-.sous-grid-justes:hover, .grid-plusdinfo > div:hover, .logo:hover, .hamburger-menu:hover,header li:hover, .btn:hover,a:hover, .familles-justes:hover,.fond-parcours-justes:hover, .maurice:hover,.ikek img:hover, .victor img:hover, li:has(a):hover {
+.sous-grid-justes:hover, .grid-plusdinfo > div:hover, .logo:hover, .hamburger-menu:hover,header li:hover, .btn:hover,a:hover, .familles-justes:hover,.fond-parcours-justes:hover, .maurice:hover,.ikek img:hover, .victor img:hover, li:has(a):hover, .PAPL-div img:hover {
     transform: scale(1.05);
 }
 
@@ -1187,3 +1187,116 @@ footer a{
 .sources-div a:hover{
     color: #17397a;
 }
+
+.PAPL-top{
+    padding: 115px 60px 60px 60px;
+}
+.PAPL-top p{
+    max-width: 730px;
+    margin: 0 auto;
+    font-size: 18px;
+}
+.PAPL-top h2{
+    text-align: center;
+    padding-bottom: 25px;
+}
+.PAPL-top div{
+    padding: 20px 0;
+}
+.PAPL-top div p:nth-child(4){
+    padding-top: 20px;
+}
+
+.PAPL-sect{
+    padding: 60px 20px;
+}
+
+.PAPL-div{
+    display: flex;
+    max-width: 760px;
+    margin: 0 auto;
+    border-top: 0.5px solid;
+    border-color: #e6e7f0;
+}
+
+.PAPL-div:first-child{
+    border-top: none;
+}
+.PAPL-div img{
+    max-width: 160px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+.PAPL-div div:has(img){
+    flex: 0 0 160px;
+    padding: 20px 30px 20px 0;
+}
+
+.PAPL-div div:nth-child(2){
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.PAPL-div h3{
+    padding-bottom: 20px;
+    color: #142A57;
+    font-size: 1.35rem;
+
+}.PAPL-div a{
+    width: fit-content;
+    padding-top: 10px;
+}
+@media (max-width:900px) {
+    .PAPL-div{
+        flex-direction: column;
+    }
+}
+
+.quote{
+    padding: 10px 0 80px 20px;
+}
+
+/* Styles pour la modale d'image */
+.modale-image {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.9); 
+    align-items: center;
+    justify-content: center;
+}
+
+.modale-image.active {
+    display: flex;
+}
+
+.modale-image-contenu {
+    max-width: 50%;
+    max-height: 50%;
+    transform: scale(1.5);
+}
+
+.fermer-modale-image {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.fermer-modale-image:hover,
+.fermer-modale-image:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+

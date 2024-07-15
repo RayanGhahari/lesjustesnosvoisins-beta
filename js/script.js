@@ -35,10 +35,21 @@ document.addEventListener("DOMContentLoaded", function() {
     function handleScroll() {
         const Top = window.scrollY === 0;
         const Position = window.location.pathname;
-        const ExceptionPage = Position.includes('les_justes') || Position.includes('les_vies_sauvees') || Position.includes('ils_ont_agi_mais') || Position.includes('histoire_et_travail_de_memoire') || Position.includes("plus_d'info")|| Position.includes("accueil");
+        
+        const exceptionPages = [
+            'les_justes',
+            'les_vies_sauvees',
+            'ils_ont_agi_mais',
+            'histoire_et_travail_de_memoire',
+            "plus_d'info",
+            'accueil'
+        ]; //passage a un tableau car trop d'exceptions
+        
+        const ExceptionPage = exceptionPages.some(page => Position.includes(page));
+        const BlancPage = Position.includes("plus_d'info/pour-aller-plus-loin.html");
     
-        header.classList.toggle('scrolled', !Top);
         header.classList.toggle('transparent', Top);
+        header.classList.toggle('scrolled', !Top || BlancPage);
     
         navLinks.forEach(link => {
             link.classList.toggle('top', Top && !ExceptionPage);
@@ -140,6 +151,34 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+
+//Zoom classique
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Sélectionne toutes les images cliquables
+    const images = document.querySelectorAll(".PAPL-div img");
+    const modale = document.getElementById("modale-image");
+    const modaleImg = document.getElementById("imageAgrandie");
+    const span = document.querySelector(".fermer-modale-image");
+
+    images.forEach(function(img) {
+        img.onclick = function() {
+            modale.classList.add("active");
+            modaleImg.src = this.src;
+        }
+    });
+    span.onclick = function() {
+        modale.classList.remove("active");
+    }
+    modale.onclick = function(event) {
+        if (event.target == modale) {
+            modale.classList.remove("active");
+        }
+    }
+});
+
 
 //optimisation
 
