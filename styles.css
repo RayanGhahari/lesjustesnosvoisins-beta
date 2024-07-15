@@ -75,10 +75,14 @@ nav a, nav a:visited{
     text-decoration: none;
 }
 
-header.scrolled a:visited, a:visited, footer a{
+header.scrolled a:visited, a:visited, footer a, .Emmanuelli-div a{
     color: white;
     text-decoration: none;
     transition: all 0.3s ease-in;
+}
+
+.fond-bleu a, .fond-bleu a:visited{
+    color: white !important; 
 }
 
 nav a:hover{
@@ -297,7 +301,7 @@ p, a{
     transition: transform 0.3s ease;
 }
 
-.sous-grid-justes:hover, .grid-plusdinfo > div:hover, .logo:hover, .hamburger-menu:hover,header li:hover, .btn:hover,a:hover, .familles-justes:hover,.fond-parcours-justes:hover, .maurice:hover,.ikek img:hover, .victor img:hover, li:has(a):hover, .PAPL-div img:hover {
+.sous-grid-justes:hover, .grid-plusdinfo > div:hover, .logo:hover, .hamburger-menu:hover,header li:hover, .btn:hover,a:hover, .familles-justes:hover,.fond-parcours-justes:hover, .maurice:hover,.ikek img:hover, .victor img:hover, li:has(a):hover, .PAPL-div img:hover, .photo-Emmanulli-div img:hover, .clickable-img img:hover {
     transform: scale(1.05);
 }
 
@@ -1106,17 +1110,6 @@ footer a{
     transform: scale(1.05);
 }
 
-@media (max-width:1100px){
-    .frise{
-        pointer-events: none;
-        cursor: default;
-    }
-    .frise:hover{
-        cursor: default;
-        transform: none;
-    }
-}
-
 .yad-vashem{
     padding: 60px 20px;
 }
@@ -1170,7 +1163,7 @@ footer a{
     font-size: 1.25rem;
 }
 
-.sources-sect a, .sources-sect a:visited{
+.sources-sect a, .sources-sect a:visited, .data-sect a, .data-sect a:visited{
     color:#142A57 !important;
     text-decoration: #142A57 solid underline !important;
 }
@@ -1211,39 +1204,40 @@ footer a{
     padding-top: 20px;
 }
 
-.PAPL-sect{
+.PAPL-sect, .photo-Emmanuelli-sect{
     padding: 60px 20px;
 }
 
-.PAPL-div{
+.PAPL-div, .photo-Emmanulli-div{
     display: flex;
     max-width: 760px;
     margin: 0 auto;
     border-top: 0.5px solid;
     border-color: #e6e7f0;
+    flex-direction: row;
 }
 
-.PAPL-div:first-child{
+.PAPL-div:first-child, .photo-Emmanulli-div:first-child{
     border-top: none;
 }
-.PAPL-div img{
+.PAPL-div img, .photo-Emmanulli-div img{
     max-width: 160px;
     transition: transform 0.3s ease;
     cursor: pointer;
 }
-.PAPL-div div:has(img){
+.PAPL-div div:has(img), .photo-Emmanulli-div div:has(img){
     flex: 0 0 160px;
     padding: 20px 30px 20px 0;
 }
 
-.PAPL-div div:nth-child(2){
+.PAPL-div div:nth-child(2), .photo-Emmanulli-div div:nth-child(2){
     display: flex;
     flex-direction: column;
     width: 100%;
     padding: 20px 0;
 }
 
-.PAPL-div h3{
+.PAPL-div h3, .photo-Emmanulli-div h4{
     padding-bottom: 20px;
     color: #142A57;
     font-size: 1.35rem;
@@ -1253,7 +1247,7 @@ footer a{
     padding-top: 10px;
 }
 @media (max-width:900px) {
-    .PAPL-div{
+    .PAPL-div, .photo-Emmanulli-div{
         flex-direction: column;
     }
 }
@@ -1280,8 +1274,8 @@ footer a{
 }
 
 .modale-image-contenu {
-    max-width: 50%;
-    max-height: 50%;
+    max-width: 60%;
+    max-height: 60%;
     transform: scale(1.5);
 }
 
@@ -1329,4 +1323,100 @@ footer a{
 .data-sect ul{
     list-style-position: inside;
     padding: 10px;
+}
+
+/*fin données*/
+/* Les Justes - famille Emmanuelli*/
+
+.Emmanuelli-top{
+    padding: 115px 20px 60px;
+    text-align: center;
+    margin: 0 auto;
+}
+.Emmanuelli-top h1{
+    text-align: center;
+    color: #142A57;
+    font-size: 2.5rem;
+}
+.Emmanuelli-top img {
+    max-width: 730px;
+    width: 100%;
+    padding: 20px 0;
+}
+.Emmanuelli-div{
+    max-width: 730px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+.Emmanuelli-div div{
+    padding: 30px 0;
+    border-top: #fff 1px solid;
+}
+.Emmanuelli-div div:first-child{
+    border: none;
+}
+.Emmanuelli-div a{
+    text-decoration: underline;
+}
+.podcast-sect h2, .itineraire-sect h2{
+    padding: 20px 0;
+    text-align: center;
+}
+
+.podcast-sect, .itineraire-sect{
+    padding: 60px 20px;
+}
+.div-iframe{
+    margin: auto;
+    width: fit-content;
+    padding: 20px;
+}
+
+iframe{
+    width: 75vw;
+    max-width: 730px;
+    height: 50vh;
+    max-height: 500px;
+}
+
+.podcast-sect p, .itineraire-sect p{
+    max-width: 730px;
+    margin: auto;
+}
+
+.clickable-img img{
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.photo-Emmanuelli-2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin: auto;
+    padding: 60px 20px;
+    max-width: 1440px;
+}
+
+.photo-Emmanuelli-2 div {
+    width: 45%;
+    position: relative;
+    padding-top: 37.5%;
+}
+
+.photo-Emmanuelli-2 img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 700px) {
+    .photo-Emmanuelli-2 div {
+        width: 100%;
+        padding-top: 75%;
+    }
 }

@@ -43,8 +43,9 @@ document.addEventListener("DOMContentLoaded", function() {
             'histoire_et_travail_de_memoire',
             "plus_d'info",
             'accueil',
-            "donnees"
-        ]; //passage a un tableau car trop d'exceptions
+            "donnees",
+            "les-Justes/famille-emmanuelli"
+        ]; 
         
         const ExceptionPage = exceptionPages.some(page => Position.includes(page));
         const BlancPage = Position.includes("plus_d'info/pour-aller-plus-loin.html");
@@ -132,14 +133,6 @@ document.addEventListener("DOMContentLoaded", function() {
             highlight.style.height = '25px';
         };
     });
-
-    document.querySelectorAll('.frise img').forEach(function (img) {
-        img.onclick = function () {
-            modal.style.display = 'flex';
-            modalImg.src = this.src;
-        }
-    });
-
     span.onclick = function () {
         modal.style.display = 'none';
         highlight.style.display = 'none';
@@ -159,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 document.addEventListener("DOMContentLoaded", function() {
     // Sélectionne toutes les images cliquables
-    const images = document.querySelectorAll(".PAPL-div img");
+    var images = document.querySelectorAll(".clickable-img img");
     const modale = document.getElementById("modale-image");
     const modaleImg = document.getElementById("imageAgrandie");
     const span = document.querySelector(".fermer-modale-image");
