@@ -420,7 +420,7 @@ p, a{
     text-align: center;
 }
 
-.blanc h2,.blanc p, .blanc h3{
+.blanc h2,.blanc p, .blanc h3, .blanc h1, .blanc h4{
     color: white !important;
 }
 
@@ -1208,11 +1208,11 @@ footer a{
     padding-top: 20px;
 }
 
-.PAPL-sect, .photo-Emmanuelli-sect{
+.PAPL-sect, .photo-Emmanuelli-sect, .photo-Perret-sect{
     padding: 60px 20px;
 }
 
-.PAPL-div, .photo-Emmanulli-div{
+.PAPL-div, .photo-Emmanulli-div, .photo-Perret-div {
     display: flex;
     max-width: 760px;
     margin: 0 auto;
@@ -1221,27 +1221,27 @@ footer a{
     flex-direction: row;
 }
 
-.PAPL-div:first-child, .photo-Emmanulli-div:first-child{
+.PAPL-div:first-child, .photo-Emmanulli-div:first-child, .photo-Perret-div:first-child{
     border-top: none;
 }
-.PAPL-div img, .photo-Emmanulli-div img{
+.PAPL-div img, .photo-Emmanulli-div img, .photo-Perret-div img{
     max-width: 160px;
     transition: transform 0.3s ease;
     cursor: pointer;
 }
-.PAPL-div div:has(img), .photo-Emmanulli-div div:has(img){
+.PAPL-div div:has(img), .photo-Emmanulli-div div:has(img), .photo-Perret-div div:has(img){
     flex: 0 0 160px;
     padding: 20px 30px 20px 0;
 }
 
-.PAPL-div div:nth-child(2), .photo-Emmanulli-div div:nth-child(2){
+.PAPL-div div:nth-child(2), .photo-Emmanulli-div div:nth-child(2), .photo-Perret-div div:nth-child(2){
     display: flex;
     flex-direction: column;
     width: 100%;
     padding: 20px 0;
 }
 
-.PAPL-div h3, .photo-Emmanulli-div h4{
+.PAPL-div h3, .photo-Emmanulli-div h4, .photo-Perret-div h4{
     padding-bottom: 20px;
     color: #142A57;
     font-size: 1.35rem;
@@ -1251,7 +1251,7 @@ footer a{
     padding-top: 10px;
 }
 @media (max-width:900px) {
-    .PAPL-div, .photo-Emmanulli-div{
+    .PAPL-div, .photo-Emmanulli-div, .photo-Perret-div{
         flex-direction: column;
     }
 }
@@ -1332,22 +1332,23 @@ footer a{
 /*fin données*/
 /* Les Justes - famille Emmanuelli*/
 
-.Emmanuelli-top{
+.Emmanuelli-top, .Perret-top{
     padding: 115px 20px 60px;
     text-align: center;
     margin: 0 auto;
 }
-.Emmanuelli-top h1{
+.Emmanuelli-top h1, .Perret-top h1{
     text-align: center;
     color: #142A57;
     font-size: 2.5rem;
+    padding: 20px 0;
 }
-.Emmanuelli-top img {
+.Emmanuelli-top img, .Perret-top img {
     max-width: 730px;
     width: 100%;
     padding: 20px 0;
 }
-.Emmanuelli-div{
+.Emmanuelli-div, .Perret-sect{
     max-width: 730px;
     margin: 0 auto;
     padding: 60px 20px;
@@ -1356,9 +1357,22 @@ footer a{
     padding: 30px 0;
     border-top: #fff 1px solid;
 }
-.Emmanuelli-div div:first-child{
+.Perret-sect div{
+    padding: 30px 0;
+    border-top: #142A57 1px solid;
+}
+.Emmanuelli-div div:first-child, .Perret-sect div:first-child, .Perret-sect div:has(h3), .Perret-sect div:last-child{
     border: none;
 }
+
+.Perret-sect > div:last-child{
+    text-align: center;
+}
+
+.Perret-sect > div:last-child h2{
+    font-size: 1.75rem;
+}
+
 .Emmanuelli-div a{
     text-decoration: underline;
 }
@@ -1393,7 +1407,7 @@ iframe{
     cursor: pointer;
 }
 
-.photo-Emmanuelli-2 {
+.photo-Emmanuelli-2,.photo-Perret-2 {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
@@ -1403,13 +1417,13 @@ iframe{
     max-width: 1440px;
 }
 
-.photo-Emmanuelli-2 div {
+.photo-Emmanuelli-2 div,.photo-Perret-2 div {
     width: 45%;
     position: relative;
     padding-top: 37.5%;
 }
 
-.photo-Emmanuelli-2 img {
+.photo-Emmanuelli-2 img, .photo-Perret-2 img {
     position: absolute;
     top: 0;
     left: 0;
@@ -1419,7 +1433,7 @@ iframe{
 }
 
 @media (max-width: 700px) {
-    .photo-Emmanuelli-2 div {
+    .photo-Emmanuelli-2 div, .photo-Perret-2 div {
         width: 100%;
         padding-top: 75%;
     }
