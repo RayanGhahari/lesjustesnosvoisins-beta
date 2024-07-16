@@ -2,7 +2,8 @@
 Version beta du site (live) : https://rayanghahari.github.io/lesjustesnosvoisins-beta/
 # To-Do List
 - [X] Terminer le HTML
-- [ ] Terminer le CSS
-- [ ] Terminer le JS
+- [X] Terminer le CSS
+- [X] Terminer le JS
 - [ ] Création d'une carte interactive
-
+- [ ] Optimisation CSS
+- [ ] Optimisation JS
