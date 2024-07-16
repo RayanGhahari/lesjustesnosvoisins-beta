@@ -44,7 +44,9 @@ document.addEventListener("DOMContentLoaded", function() {
             "plus_d'info",
             'accueil',
             "donnees",
-            "les-Justes/famille-emmanuelli"
+            "les-Justes/famille-emmanuelli",
+            "les-vies-sauvees/temoignage-de-maurice-dreksler",
+            'ils-ont-agi-mais'
         ]; 
         
         const ExceptionPage = exceptionPages.some(page => Position.includes(page));

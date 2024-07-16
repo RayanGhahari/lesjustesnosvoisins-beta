@@ -478,8 +478,10 @@ p, a{
     footer a{
         display: block;
     }
-    .maurice input{
-        display: block;
+    .maurice > div{
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 30px;
     }
 
     .modal-content{
@@ -1044,7 +1046,7 @@ footer a{
 .grid-2-desc{
     height: fit-content;
     margin: auto;
-    padding: 60px;
+    padding: 60px 30px;
     max-width: 750px;
     width: auto;
 }
@@ -1063,6 +1065,7 @@ footer a{
         grid-template-rows: auto auto;
         grid-template-columns: none;
         height: auto;
+        min-height: auto;
     }
     .grid-2-img img{
         height: 100%;
@@ -1072,7 +1075,7 @@ footer a{
     }
     .grid-2-desc{
         grid-row-start: 2;
-        padding-top: 20px;
+        padding: 100px 20;
     }
 }    
 @media (max-width:1000px){
@@ -1139,14 +1142,14 @@ footer a{
     font-size: 2rem;
 }
 
-.remerciements-sect{
+.remerciements-sect, .Larousse-sect{
     padding: 115px 20px ;
 }
-.remerciements-sect div{
+.remerciements-sect div, .Larousse-sect div{
     width: fit-content;
     margin: auto;
     max-width: 730px;
-    padding: 15px;
+    padding-top: 15px;
 }
 
 /*fin accueil*/
@@ -1208,11 +1211,11 @@ footer a{
     padding-top: 20px;
 }
 
-.PAPL-sect, .photo-Emmanuelli-sect, .photo-Perret-sect{
+.PAPL-sect, .photo-Emmanuelli-sect, .photo-Perret-sect, .photo-abbe-Morel-sect{
     padding: 60px 20px;
 }
 
-.PAPL-div, .photo-Emmanulli-div, .photo-Perret-div {
+.PAPL-div, .photo-Emmanulli-div, .photo-Perret-div, .photo-abbe-Morel-div {
     display: flex;
     max-width: 760px;
     margin: 0 auto;
@@ -1221,27 +1224,31 @@ footer a{
     flex-direction: row;
 }
 
+.photo-abbe-Morel-div{
+    border: none !important;
+}
+
 .PAPL-div:first-child, .photo-Emmanulli-div:first-child, .photo-Perret-div:first-child{
     border-top: none;
 }
-.PAPL-div img, .photo-Emmanulli-div img, .photo-Perret-div img{
+.PAPL-div img, .photo-Emmanulli-div img, .photo-Perret-div img, .photo-abbe-Morel-div img{
     max-width: 160px;
     transition: transform 0.3s ease;
     cursor: pointer;
 }
-.PAPL-div div:has(img), .photo-Emmanulli-div div:has(img), .photo-Perret-div div:has(img){
+.PAPL-div div:has(img), .photo-Emmanulli-div div:has(img), .photo-Perret-div div:has(img), .photo-abbe-Morel-div div:has(img){
     flex: 0 0 160px;
     padding: 20px 30px 20px 0;
 }
 
-.PAPL-div div:nth-child(2), .photo-Emmanulli-div div:nth-child(2), .photo-Perret-div div:nth-child(2){
+.PAPL-div div:nth-child(2), .photo-Emmanulli-div div:nth-child(2), .photo-Perret-div div:nth-child(2), .photo-abbe-Morel-div div:nth-child(2){
     display: flex;
     flex-direction: column;
     width: 100%;
     padding: 20px 0;
 }
 
-.PAPL-div h3, .photo-Emmanulli-div h4, .photo-Perret-div h4{
+.PAPL-div h3, .photo-Emmanulli-div h4, .photo-Perret-div h4, .photo-abbe-Morel-div h3{
     padding-bottom: 20px;
     color: #142A57;
     font-size: 1.35rem;
@@ -1251,7 +1258,7 @@ footer a{
     padding-top: 10px;
 }
 @media (max-width:900px) {
-    .PAPL-div, .photo-Emmanulli-div, .photo-Perret-div{
+    .PAPL-div, .photo-Emmanulli-div, .photo-Perret-div, .photo-abbe-Morel-div{
         flex-direction: column;
     }
 }
@@ -1348,12 +1355,12 @@ footer a{
     width: 100%;
     padding: 20px 0;
 }
-.Emmanuelli-div, .Perret-sect{
+.Emmanuelli-div, .Perret-sect, .Dreksler-div, .abbe-Morel{
     max-width: 730px;
     margin: 0 auto;
     padding: 60px 20px;
 }
-.Emmanuelli-div div{
+.Emmanuelli-div div, .Dreksler-div div, .abbe-Morel div{
     padding: 30px 0;
     border-top: #fff 1px solid;
 }
@@ -1361,7 +1368,7 @@ footer a{
     padding: 30px 0;
     border-top: #142A57 1px solid;
 }
-.Emmanuelli-div div:first-child, .Perret-sect div:first-child, .Perret-sect div:has(h3), .Perret-sect div:last-child{
+.Emmanuelli-div div:first-child, .Perret-sect div:first-child, .Perret-sect div:has(h3), .Perret-sect div:last-child, .Dreksler-div div:first-child, .abbe-Morel div:first-child{
     border: none;
 }
 
@@ -1373,7 +1380,7 @@ footer a{
     font-size: 1.75rem;
 }
 
-.Emmanuelli-div a{
+.Emmanuelli-div a, .Dreksler-div a{
     text-decoration: underline;
 }
 .podcast-sect h2, .itineraire-sect h2{
@@ -1437,4 +1444,14 @@ iframe{
         width: 100%;
         padding-top: 75%;
     }
+}
+
+.Dreksler-img{
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.Dreksler-img img{
+    width: 100%;
+    max-width: 730px;
 }
