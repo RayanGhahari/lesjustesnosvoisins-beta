@@ -4,6 +4,6 @@ Version beta du site (live) : https://rayanghahari.github.io/lesjustesnosvoisins
 - [X] Terminer le HTML
 - [X] Terminer le CSS
 - [X] Terminer le JS
-- [ ] Création d'une carte interactive
+- [X] Création d'une carte interactive
 - [ ] Optimisation CSS
 - [ ] Optimisation JS
