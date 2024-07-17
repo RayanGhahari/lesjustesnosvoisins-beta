@@ -301,7 +301,7 @@ p, a{
     transition: transform 0.3s ease;
 }
 
-.sous-grid-justes:hover, .grid-plusdinfo > div:hover, .logo:hover, .hamburger-menu:hover,header li:hover, .btn:hover,a:hover, .familles-justes:hover,.fond-parcours-justes:hover, .maurice:hover,.ikek img:hover, .victor img:hover, li:has(a):hover, .PAPL-div img:hover, .photo-Emmanulli-div img:hover, .clickable-img img:hover {
+.sous-grid-justes:hover, .grid-plusdinfo > div:hover, .logo:hover, .hamburger-menu:hover,header li:hover, .btn:hover,a:hover, .familles-justes:hover,.fond-parcours-justes:hover, .maurice:hover,.ikek img:hover, .victor img:hover, li:has(a):hover, .PAPL-div img:hover, .photo-Emmanulli-div img:hover, .clickable-img img:hover, .carte-container:hover {
     transform: scale(1.05);
 }
 
@@ -1454,4 +1454,159 @@ iframe{
 .Dreksler-img img{
     width: 100%;
     max-width: 730px;
+}
+
+/*carte intéractive index.html (page d'accueil)*/
+
+
+.carte-outer-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.carte-container {
+    position: relative;
+    width: fit-content;
+    transition: transform 0.3s ease;
+    margin: 0 auto;
+}
+
+.carte-img {
+    width: 100%;
+    height: auto;
+    transition: filter 0.5s ease, transform 0.5s ease;
+}
+
+.marker-container {
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    cursor: pointer;
+}
+.marker-container:hover {
+    z-index: 2;
+}
+.marker {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 26% !important;
+    height: auto;
+    transition: all 0.5s ease;
+}
+
+.marker-container:hover .marker {
+    transform: translate(-50%, -50%) scale(1.2);
+    left: 53%;
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.7;
+    }
+    70% {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0;
+    }
+}
+
+.marker-container::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 35%;
+    height: 50%;
+    background-color: rgba(255, 0, 0, 0.5);
+    border-radius: 100%;
+    animation: pulse 1.5s infinite;
+    z-index: 1;
+}
+
+#marker-container-emmanuelli {
+    left: 82.7%;
+    top: 43.1%;
+}
+
+#marker-container-perret {
+    left: 56.5%;
+    top: 3.9%;
+}
+
+.famille-info {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 1000;
+    pointer-events: none;
+    max-width: auto;
+}
+
+.famille-info.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.famille-info h3,
+.famille-info p {
+    color: #142A57 !important;
+}
+
+.famille-info h3 {
+    margin-bottom: 10px;
+}
+
+.famille-img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.btn-decouvrir {
+    display: block;
+    padding: 10px 15px;
+    background-color: #142A57;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.btn-decouvrir:hover {
+    background-color: #0e1d3d;
+}
+
+@media (max-width: 800px) {
+    .famille-info.visible {
+        position: absolute;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        width: 75%;
+        max-width: 300px;
+        z-index: 1000;
+        padding: 20px;
+
+    }
+    .famille-info{
+        max-width: 260px;
+        width: 75%;
+        top: 50% !important;
+        left: -60% !important;
+    }
 }

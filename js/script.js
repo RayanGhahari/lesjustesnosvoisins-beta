@@ -189,3 +189,148 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('img[data-src]').forEach(img => observer.observe(img));
 
+// carte intéractive
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const conteneursMarqueurs = document.querySelectorAll(".marker-container");
+    const conteneurCarte = document.querySelector(".carte-outer-container");
+    const imageCarte = document.querySelector(".carte-img");
+    
+    const largeurEcranPetit = 800; // Largeur d'écran pour considérer comme "petit"
+
+    function estPetitEcran() {
+        return window.innerWidth < largeurEcranPetit;
+    }
+
+    function afficherInfoBulle(elementInfo, rect, rectConteneur, famille) {
+        let positionGauche, positionHaut;
+
+        if (famille === 'emmanuelli') {
+            positionGauche = rect.right - rectConteneur.left;
+            positionHaut = rect.top - rectConteneur.top;
+        } else {
+            positionGauche = rect.left - rectConteneur.left;
+            positionHaut = rect.bottom - rectConteneur.top;
+        }
+
+        // Ajustement pour éviter que l'info-bulle ne sorte de l'écran
+        if (positionGauche + 300 > rectConteneur.width) {
+            positionGauche = rect.left - rectConteneur.left - 300;
+        }
+
+        elementInfo.style.left = `${positionGauche}px`;
+        elementInfo.style.top = `${positionHaut}px`;
+        elementInfo.classList.add('visible');
+    }
+
+    function cacherInfoBulle(elementInfo) {
+        elementInfo.classList.remove('visible');
+    }
+
+    function agrandirCarte() {
+        imageCarte.style.transform = "scale(1.02)";
+        imageCarte.style.filter = "brightness(0.9)";
+    }
+
+    function reinitialiserCarte() {
+        imageCarte.style.transform = "scale(1)";
+        imageCarte.style.filter = "brightness(1)";
+    }
+
+    function gererSurvolMarqueur(conteneur) {
+        conteneur.addEventListener("mouseenter", function() {
+            if (estPetitEcran()) return;
+            
+            const famille = this.dataset.family;
+            const elementInfo = document.getElementById(`info-${famille}`);
+            const rect = this.getBoundingClientRect();
+            const rectConteneur = conteneurCarte.getBoundingClientRect();
+            
+            afficherInfoBulle(elementInfo, rect, rectConteneur, famille);
+            agrandirCarte();
+        });
+
+        conteneur.addEventListener("mouseleave", function() {
+            if (estPetitEcran()) return;
+            
+            const famille = this.dataset.family;
+            const elementInfo = document.getElementById(`info-${famille}`);
+            
+            cacherInfoBulle(elementInfo);
+            reinitialiserCarte();
+        });
+    }
+
+    function gererClicMarqueur(conteneur) {
+        conteneur.addEventListener("click", function(e) {
+            const famille = this.dataset.family;
+            const elementInfo = document.getElementById(`info-${famille}`);
+            
+            if (estPetitEcran()) {
+                e.preventDefault();
+                const elementsInfoVisibles = document.querySelectorAll('.famille-info.visible');
+                elementsInfoVisibles.forEach(cacherInfoBulle);
+                afficherInfoBulleMobile(elementInfo);
+            } else {
+                window.location.href = `les-Justes/famille-${famille}.html`;
+            }
+        });
+    }
+
+    function afficherInfoBulleMobile(elementInfo) {
+        elementInfo.classList.add('visible');
+        elementInfo.style.left = '50%';
+        elementInfo.style.top = '50%';
+        elementInfo.style.transform = 'translate(-50%, -50%)';
+        
+        ajouterBoutonFermer(elementInfo);
+        gererBoutonDecouvrirMobile(elementInfo);
+    }
+
+    function ajouterBoutonFermer(elementInfo) {
+        const boutonFermer = document.createElement('button');
+        boutonFermer.textContent = 'X';
+        boutonFermer.style.position = 'absolute';
+        boutonFermer.style.top = '10px';
+        boutonFermer.style.right = '10px';
+        boutonFermer.addEventListener('click', function() {
+            cacherInfoBulle(elementInfo);
+        });
+        elementInfo.appendChild(boutonFermer);
+    }
+
+    function gererBoutonDecouvrirMobile(elementInfo) {
+        const boutonDecouvrir = elementInfo.querySelector('.btn-decouvrir');
+        boutonDecouvrir.addEventListener('click', function(event) {
+            event.stopPropagation();
+            window.location.href = this.href;
+        });
+    }
+
+    function gererClicDocument(event) {
+        if (estPetitEcran()) {
+            const elementsInfo = document.querySelectorAll('.famille-info.visible');
+            elementsInfo.forEach(elementInfo => {
+                if (!elementInfo.contains(event.target) && !event.target.closest('.marker-container')) {
+                    cacherInfoBulle(elementInfo);
+                }
+            });
+        }
+    }
+
+    conteneursMarqueurs.forEach(conteneur => {
+        gererSurvolMarqueur(conteneur);
+        gererClicMarqueur(conteneur);
+    });
+
+    conteneurCarte.addEventListener("mouseleave", function() {
+        if (estPetitEcran()) return;
+        
+        const elementsInfo = document.querySelectorAll('.famille-info');
+        elementsInfo.forEach(cacherInfoBulle);
+        reinitialiserCarte();
+    });
+
+    document.addEventListener('click', gererClicDocument);
+});
