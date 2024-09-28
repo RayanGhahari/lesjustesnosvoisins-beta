@@ -1,0 +1,17 @@
+RewriteEngine On
+RewriteBase /
+
+#accueil.html
+RewriteRule ^$ accueil.html [L]
+
+# Ne pas appliquer la réécriture aux fichiers et dossiers existants
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#racine
+RewriteRule ^([^/]+)/?$ $1.html [L]
+
+#sous-dossiers
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)/(.+)/?$ $1/$2.html [L]

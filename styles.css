@@ -75,7 +75,7 @@ nav a, nav a:visited{
     text-decoration: none;
 }
 
-header.scrolled a:visited, a:visited, footer a, .Emmanuelli-div a{
+header.scrolled a, a:visited, footer a, .Emmanuelli-div a{
     color: white;
     text-decoration: none;
     transition: all 0.3s ease-in;

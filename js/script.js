@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const Position = window.location.pathname;
         
         const exceptionPages = [
-            'les_justes',
+            'les_Justes',
             'les_vies_sauvees',
             'ils_ont_agi_mais',
             'histoire_et_travail_de_memoire',
