@@ -42,6 +42,8 @@ document.addEventListener("DOMContentLoaded", function() {
             'ils_ont_agi_mais',
             'histoire_et_travail_de_memoire',
             "plus_d'info",
+            "plus-d'info/sources",
+            "plus-d'info/qui-sommes-nous",
             'accueil',
             "donnees",
             "les-Justes/famille-emmanuelli",
@@ -50,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
         ]; 
         
         const ExceptionPage = exceptionPages.some(page => Position.includes(page));
-        const BlancPage = Position.includes("plus_d'info/pour-aller-plus-loin.html");
+        const BlancPage = Position.includes("plus-d'info/pour-aller-plus-loin.html");
     
         header.classList.toggle('transparent', Top);
         header.classList.toggle('scrolled', !Top || BlancPage);
