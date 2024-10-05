@@ -195,11 +195,15 @@ document.querySelectorAll('img[data-src]').forEach(img => observer.observe(img))
 
 
 document.addEventListener("DOMContentLoaded", function() {
+
+
+
     const conteneursMarqueurs = document.querySelectorAll(".marker-container");
     const conteneurCarte = document.querySelector(".carte-outer-container");
     const imageCarte = document.querySelector(".carte-img");
     
-    const largeurEcranPetit = 800; // Largeur d'écran pour considérer comme "petit"
+    const largeurEcranPetit = 800;
+    let timeoutId;
 
     function estPetitEcran() {
         return window.innerWidth < largeurEcranPetit;
@@ -216,7 +220,6 @@ document.addEventListener("DOMContentLoaded", function() {
             positionHaut = rect.bottom - rectConteneur.top;
         }
 
-        // Ajustement pour éviter que l'info-bulle ne sorte de l'écran
         if (positionGauche + 300 > rectConteneur.width) {
             positionGauche = rect.left - rectConteneur.left - 300;
         }
@@ -248,9 +251,31 @@ document.addEventListener("DOMContentLoaded", function() {
             const elementInfo = document.getElementById(`info-${famille}`);
             const rect = this.getBoundingClientRect();
             const rectConteneur = conteneurCarte.getBoundingClientRect();
+
+        // Fermer tous les autres divs
+        document.querySelectorAll('.famille-info.visible').forEach(div => {
+            if (div !== elementInfo) {
+                cacherInfoBulle(div);
+            }
+        });
             
+            clearTimeout(timeoutId);
             afficherInfoBulle(elementInfo, rect, rectConteneur, famille);
             agrandirCarte();
+
+            // Ajouter des écouteurs d'événements à l'info-bulle
+            elementInfo.addEventListener("mouseenter", function() {
+                clearTimeout(timeoutId);
+                this.style.transform = 'scale(1.05)';
+            });
+
+            elementInfo.addEventListener("mouseleave", function() {
+                this.style.transform = 'scale(1)';
+                timeoutId = setTimeout(() => {
+                    cacherInfoBulle(elementInfo);
+                    reinitialiserCarte();
+                }, 100);
+            });
         });
 
         conteneur.addEventListener("mouseleave", function() {
@@ -259,8 +284,10 @@ document.addEventListener("DOMContentLoaded", function() {
             const famille = this.dataset.family;
             const elementInfo = document.getElementById(`info-${famille}`);
             
-            cacherInfoBulle(elementInfo);
-            reinitialiserCarte();
+            timeoutId = setTimeout(() => {
+                cacherInfoBulle(elementInfo);
+                reinitialiserCarte();
+            }, 100);
         });
     }
 
@@ -291,32 +318,25 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function ajouterBoutonFermer(elementInfo) {
-        const boutonFermer = document.createElement('button');
-        boutonFermer.textContent = 'X';
-        boutonFermer.style.position = 'absolute';
-        boutonFermer.style.top = '10px';
-        boutonFermer.style.right = '10px';
-        boutonFermer.addEventListener('click', function() {
-            cacherInfoBulle(elementInfo);
-        });
-        elementInfo.appendChild(boutonFermer);
+        let boutonFermer = elementInfo.querySelector('button');
+        if (!boutonFermer) {
+            boutonFermer = document.createElement('button');
+            boutonFermer.textContent = 'X';
+            boutonFermer.style.position = 'absolute';
+            boutonFermer.style.top = '10px';
+            boutonFermer.style.right = '10px';
+            boutonFermer.addEventListener('click', function() {
+                cacherInfoBulle(elementInfo);
+            });
+            elementInfo.appendChild(boutonFermer);
+        }
     }
 
     function gererBoutonDecouvrirMobile(elementInfo) {
         const boutonDecouvrir = elementInfo.querySelector('.btn-decouvrir');
-        boutonDecouvrir.addEventListener('click', function(event) {
-            event.stopPropagation();
-            window.location.href = this.href;
-        });
-    }
-
-    function gererClicDocument(event) {
-        if (estPetitEcran()) {
-            const elementsInfo = document.querySelectorAll('.famille-info.visible');
-            elementsInfo.forEach(elementInfo => {
-                if (!elementInfo.contains(event.target) && !event.target.closest('.marker-container')) {
-                    cacherInfoBulle(elementInfo);
-                }
+        if (boutonDecouvrir) {
+            boutonDecouvrir.addEventListener('click', function(event) {
+                event.stopPropagation();
             });
         }
     }
@@ -329,9 +349,11 @@ document.addEventListener("DOMContentLoaded", function() {
     conteneurCarte.addEventListener("mouseleave", function() {
         if (estPetitEcran()) return;
         
-        const elementsInfo = document.querySelectorAll('.famille-info');
-        elementsInfo.forEach(cacherInfoBulle);
-        reinitialiserCarte();
+        timeoutId = setTimeout(() => {
+            const elementsInfo = document.querySelectorAll('.famille-info');
+            elementsInfo.forEach(cacherInfoBulle);
+            reinitialiserCarte();
+        }, 100);
     });
 
     document.addEventListener('click', gererClicDocument);
