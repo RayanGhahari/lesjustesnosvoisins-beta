@@ -356,5 +356,45 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 100);
     });
 
-    document.addEventListener('click', gererClicDocument);
+});
+
+// Fonction pour charger le script de smooth scroll
+function loadLenisScript(callback) {
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js';
+    script.onload = callback;
+    document.head.appendChild(script);
+}
+
+// Fonction pour initialiser Lenis
+function initLenis() {
+    const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        direction: 'vertical',
+        gestureDirection: 'vertical',
+        smooth: true,
+        mouseMultiplier: 1,
+        smoothTouch: false,
+        touchMultiplier: 2,
+        infinite: false,
+    });
+
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    // Mise à jour de Lenis lors du redimensionnement de la fenêtre
+    window.addEventListener('resize', () => {
+        lenis.resize();
+    });
+}
+
+// Chargement et initialisation de Lenis
+loadLenisScript(() => {
+    console.log('Lenis script loaded');
+    initLenis();
 });
