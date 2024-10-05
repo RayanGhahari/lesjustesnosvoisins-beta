@@ -108,75 +108,89 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener('scroll', updateScrollProgress);
     window.addEventListener('load', checkScroll);
 
-    const modal = document.getElementById('image-modal');
-    const modalImg = document.getElementById('imageAgrandie');
-    const span = document.getElementsByClassName('fermer')[0];
-    const highlight = document.querySelector('.highlight');
-
-    document.querySelectorAll('.image-clickable').forEach(function (img) {
-        img.onclick = function () {
-            modal.style.display = 'flex';
-            modalImg.src = this.src;
-
-            highlight.style.display = 'block';
-            highlight.style.left = '367px';
-            highlight.style.top = '107px';
-            highlight.style.width = '135px';  
-            highlight.style.height = '25px';
-        };
-    });
-    
-    document.querySelectorAll('.image-clickable-bis').forEach(function (img) {
-        img.onclick = function () {
-            modal.style.display = 'flex';
-            modalImg.src = this.src;
-            highlight.style.display = 'block';
-            highlight.style.left = '260px';
-            highlight.style.top = '112px';
-            highlight.style.width = '128px';  
-            highlight.style.height = '25px';
-        };
-    });
-    span.onclick = function () {
-        modal.style.display = 'none';
-        highlight.style.display = 'none';
-    };
-
-    modal.addEventListener('click', function (event) {
-        if (event.target === modal) {
-            modal.style.display = 'none';
-            highlight.style.display = 'none';
-        }
-    });
-});
+})
 
 
-//Zoom classique
-
+//Zoom 
 
 document.addEventListener("DOMContentLoaded", function() {
-    // Sélectionne toutes les images cliquables
-    var images = document.querySelectorAll(".clickable-img img");
+    const modal = document.getElementById('image-modal');
+    const modalImg = document.getElementById('imageAgrandie');
+    const span = document.querySelector('.fermer');
+    const highlight = document.querySelector('.highlight');
+
+    // Vérifie si les éléments nécessaires existent avant d'ajouter les "écouteurs"
+    if (modal && modalImg && highlight) {
+        const setupImageClick = (selector, highlightConfig) => {
+            document.querySelectorAll(selector).forEach(function(img) {
+                img.addEventListener('click', function() {
+                    modal.style.display = 'flex';
+                    modalImg.src = this.src;
+                    
+                    highlight.style.display = 'block';
+                    Object.assign(highlight.style, highlightConfig);
+                });
+            });
+        };
+
+        // Configuration pour les images clickables normales
+        setupImageClick('.image-clickable', {
+            left: '367px',
+            top: '107px',
+            width: '135px',
+            height: '25px'
+        });
+
+        // Configuration pour les images clickables "bis"
+        setupImageClick('.image-clickable-bis', {
+            left: '260px',
+            top: '112px',
+            width: '128px',
+            height: '25px'
+        });
+
+        // Gestion de la fermeture de la modale
+        if (span) {
+            span.addEventListener('click', function() {
+                modal.style.display = 'none';
+                highlight.style.display = 'none';
+            });
+        }
+
+        modal.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                highlight.style.display = 'none';
+            }
+        });
+    }
+
+    // Code pour la deuxième modale (Générale)
     const modale = document.getElementById("modale-image");
     const modaleImg = document.getElementById("imageAgrandie");
-    const span = document.querySelector(".fermer-modale-image");
+    const spanFermer = document.querySelector(".fermer-modale-image");
+    
+    if (modale && modaleImg) {
+        document.querySelectorAll(".clickable-img img").forEach(function(img) {
+            img.addEventListener('click', function() {
+                modale.classList.add("active");
+                modaleImg.src = this.src;
+            });
+        });
 
-    images.forEach(function(img) {
-        img.onclick = function() {
-            modale.classList.add("active");
-            modaleImg.src = this.src;
+        if (spanFermer) {
+            spanFermer.addEventListener('click', function() {
+                modale.classList.remove("active");
+            });
         }
-    });
-    span.onclick = function() {
-        modale.classList.remove("active");
-    }
-    modale.onclick = function(event) {
-        if (event.target == modale) {
-            modale.classList.remove("active");
-        }
+
+        modale.addEventListener('click', function(event) {
+            if (event.target === modale) {
+                modale.classList.remove("active");
+            }
+        });
     }
 });
-
 
 //optimisation
 
@@ -285,11 +299,13 @@ document.addEventListener("DOMContentLoaded", function() {
             const elementInfo = document.getElementById(`info-${famille}`);
             
             timeoutId = setTimeout(() => {
-                cacherInfoBulle(elementInfo);
-                reinitialiserCarte();
-            }, 100);
-        });
-    }
+                if (!elementInfo.matches(':hover')) {
+                    cacherInfoBulle(elementInfo);
+                    reinitialiserCarte();
+                }
+        }, 100);
+    });
+}
 
     function gererClicMarqueur(conteneur) {
         conteneur.addEventListener("click", function(e) {
@@ -306,6 +322,20 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }
+
+    function gererClicDocument(event) {
+        if (estPetitEcran()) {
+            const elementsInfo = document.querySelectorAll('.famille-info.visible');
+            elementsInfo.forEach(elementInfo => {
+                if (!elementInfo.contains(event.target) && !event.target.closest('.marker-container')) {
+                    cacherInfoBulle(elementInfo);
+                    elementInfo.style.transform = 'scale(0)';
+                }
+            });
+        }
+    }
+    
+    document.addEventListener('click', gererClicDocument);
 
     function afficherInfoBulleMobile(elementInfo) {
         elementInfo.classList.add('visible');
@@ -351,8 +381,13 @@ document.addEventListener("DOMContentLoaded", function() {
         
         timeoutId = setTimeout(() => {
             const elementsInfo = document.querySelectorAll('.famille-info');
-            elementsInfo.forEach(cacherInfoBulle);
-            reinitialiserCarte();
+            elementsInfo.forEach(elementInfo => {
+                if (!elementInfo.matches(':hover')) {
+                    cacherInfoBulle(elementInfo);
+                    elementInfo.style.transform = 'scale(1)'; // Réinitialiser l'échelle
+                    reinitialiserCarte();
+                }
+            });
         }, 100);
     });
 
