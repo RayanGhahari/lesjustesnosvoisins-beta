@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
     navLinks.forEach(function(link) {
         const href = link.getAttribute("href");
-        if (page === href || (page === "" && href === "index.html")) {
+        if (page === href || (page === "" && href === "index")) {
             link.classList.add("active");
         }
     });
@@ -52,9 +52,9 @@ document.addEventListener("DOMContentLoaded", function() {
         ]; 
         
         const ExceptionPage = exceptionPages.some(page => Position.includes(page));
-        const BlancPage = Position.includes("plus-d'info/pour-aller-plus-loin.html");
+        const BlancPage = Position.includes("plus-d'info/pour-aller-plus-loin");
     
-        header.classList.toggle('transparent', Top);
+        header.classList.toggle('transparent', Top && !BlancPage);
         header.classList.toggle('scrolled', !Top || BlancPage);
     
         navLinks.forEach(link => {
@@ -318,7 +318,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 elementsInfoVisibles.forEach(cacherInfoBulle);
                 afficherInfoBulleMobile(elementInfo);
             } else {
-                window.location.href = `les-Justes/famille-${famille}.html`;
+                window.location.href = `les-Justes/famille-${famille}`;
             }
         });
     }
