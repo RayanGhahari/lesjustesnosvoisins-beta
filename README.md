@@ -1,5 +1,5 @@
 # Version Beta lesjustesnosvoisins.fr
-Version beta du site (live) : https://lesjustesnosvoisins.000.pe
+Version beta du site (live) : https://lesjustesnosvoisins.rf.gd/
 # To-Do List
 - [X] Terminer le HTML
 - [X] Terminer le CSS
