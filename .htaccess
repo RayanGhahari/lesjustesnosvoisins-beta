@@ -3,6 +3,7 @@ RewriteBase /
 
 #accueil.html
 RewriteRule ^$ accueil.html [L]
+DirectoryIndex accueil.html
 
 # Ne pas appliquer la réécriture aux fichiers et dossiers existants
 RewriteCond %{REQUEST_FILENAME} !-f
